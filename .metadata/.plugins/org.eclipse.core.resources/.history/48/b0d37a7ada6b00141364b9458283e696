@@ -20,7 +20,7 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
   private float y;
   private float time;
   private float degree;
-  private float size = 1;
+  private float size;
   private short push;
   private boolean play = true;
   private static String soundName;
