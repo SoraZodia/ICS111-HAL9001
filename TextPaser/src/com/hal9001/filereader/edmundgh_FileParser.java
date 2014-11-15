@@ -55,7 +55,27 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
    * Translate the command into Java code
    */
   private void parse(String command){
+	  switch(command.toLowerCase()){
+	  case "control":
+		  x = reader.nextFloat();
+		  y = reader.nextFloat();
+		  degree = reader.nextFloat();
+		  size = reader.nextFloat();
+		  time = reader.nextFloat();
+		  image.setInterpolAll(x, y, degree, size, time);
+		  System.out.printf("[%s] Image to X:%s, Y:%s, Degree:%s, Size:%s in %s secord \n", name,x,y,degree,size,time);
+		  break;
 
+	  case "move":
+		  x = reader.nextFloat();
+		  y = reader.nextFloat();
+		  time = reader.nextFloat();
+		  image.setInterpolAll(x, y, degree, size, time);
+		  System.out.printf("[%s] Moving to X:%s Y:%s in %s secord \n", name,x,y,time);
+		  break;
+
+	  case "rotate":
+		  degree = reader.nextFloat();
 		  time = reader.nextFloat();
 		  image.setInterpolAll(x, y, degree, size, time);
 		  System.out.printf("[%s] Rotating to %s degree in %s secord \n", name,degree,time);
