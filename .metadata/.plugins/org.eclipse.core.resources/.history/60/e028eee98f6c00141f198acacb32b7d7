@@ -1,3 +1,4 @@
+package com.hal9001.antimation;
 /*
 Copyright (c) 2014, Dylan Kobayashi
 Laboratory for Advanced Visualization and Applications, University of Hawaii at Manoa.
@@ -25,7 +26,6 @@ ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
 (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
-package com.hal9001.antimation;
 
 import java.awt.Color;
 import java.awt.Dimension;
@@ -47,7 +47,6 @@ import java.awt.geom.Ellipse2D;
 //import java.awt.geom.Ellipse2D.Double;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 //import java.security.acl.LastOwnerException;
 import java.util.ArrayList;
@@ -182,7 +181,7 @@ public class EZ extends JPanel {
   @Override public void paintComponent(Graphics g) {
     Graphics2D g2 = (Graphics2D) g;
     g2.setColor(backgroundColor); // wash the background with specified bg color to prevent ghosting.
-    g2.fillRect(0, 0, WWIDTH + 100, WHEIGHT + 100);
+    g2.fillRect(0, 0, WWIDTH, WHEIGHT);
 
     for (int i = 0; i < elements.size(); i++) {
       if(!elements.get(i).hasParent()){
@@ -430,8 +429,8 @@ public class EZ extends JPanel {
    */
   public static EZText addText(String fontName, int x, int y, String msg, Color c, int fs) {
     EZText vc = new EZText(x, y, msg, c, fs);
-    vc.setFont(fontName);
     EZ.app.elements.add(vc);
+    vc.setFont(fontName);
     refreshScreen();
     return vc;
   }
@@ -815,9 +814,9 @@ public class EZ extends JPanel {
     frame.setContentPane(newContentPane);
 
     // Size the frame according to largest element, then display the window.
-    frame.setResizable(false);
     frame.pack();
     frame.setVisible(true);
+    frame.setResizable(true);
     timeDelta = 0;
     lastUpdate = System.currentTimeMillis();
   }
@@ -1652,7 +1651,11 @@ class EZText extends EZElement {
   /** Used to specify y center. */
   protected double yCenter;
 
-  protected int fontSize = 20;
+  /**Point size the front will be displayed in. Influences the width and height.*/
+  protected int fontSize;
+  
+  /**The name of the font that will be used.*/
+  protected String fontName;
   
 
   /**
@@ -1674,13 +1677,11 @@ class EZText extends EZElement {
     this.color = color;
     this.fontSize = fSize;
     this.fontName = EZ.app.getFont().getName();
-    this.dFont = EZ.app.getFont();
   } // end constructor
   
   @Override public void paint(Graphics2D g2) {
     if (this.isShowing) {
-      //g2.setFont(new Font(fontName, Font.PLAIN, fontSize));
-      g2.setFont(  dFont.deriveFont( (float) fontSize) ); 
+      g2.setFont(new Font(fontName, Font.PLAIN, fontSize));
       g2.setColor(color);
       // only print if the message has visible characters.
       if (msg.trim().length() > 0) {
@@ -1755,14 +1756,12 @@ class EZText extends EZElement {
   }
 
   @Override public int getHeight() {
-    //EZ.app.setFont(new Font(fontName, Font.PLAIN, fontSize));
-    EZ.app.setFont( dFont.deriveFont( (float) fontSize) );
+    EZ.app.setFont(new Font(fontName, Font.PLAIN, fontSize));
     return EZElement.getHeightOf(msg);
   }
 
   @Override public int getWidth() {
-    //EZ.app.setFont(new Font(fontName, Font.PLAIN, fontSize));
-    EZ.app.setFont( dFont.deriveFont( (float) fontSize) );
+    EZ.app.setFont(new Font(fontName, Font.PLAIN, fontSize));
     return EZElement.getWidthOf(msg);
   }
 
@@ -1825,18 +1824,7 @@ class EZText extends EZElement {
   public int getFontSize() {
     return this.fontSize;
   }
-
-  /**Stores the name of the font used.*/
-  private String fontName;
-  /**Contains the Font object used for display.*/
-  private Font dFont;
-
-  /**Holds the loaded fonts from files.*/
-  private static ArrayList<Font> loadedFonts = new ArrayList<Font>();
-  /**Holds the loaded file names.*/
-  private static ArrayList<String> loadedFiles = new ArrayList<String>();
-  /**The font item itself which should be displayed.*/
-
+  
   /**
    * Will print all available fonts to console.
    * Usage would be done before the program is complete so the use can verify available fonts and choose from among them.
@@ -1866,30 +1854,21 @@ class EZText extends EZElement {
    * @param name of the font to use.
    */
   public void setFont(String name) {
-    if(name.contains(".ttf") || name.contains(".TTF")){
-      if( !checkIfAlreadyLoaded(name) ) {
-        tryLoadFontFromFile(name);
+    String[] allNames = getAllFontNames();
+    boolean match = false;
+    for(String n : allNames) {
+      if(n.equals(name)){
+        match = true;
+        break;
       }
     }
+    if(match){
+      fontName = name;
+    }
     else {
-      String[] allNames = getAllFontNames();
-      boolean match = false;
-      for(String n : allNames) {
-        if(n.equals(name)){
-          match = true;
-          break;
-        }
-      }
-      if(match){
-        fontName = name;
-        EZ.app.setFont(new Font(fontName, Font.PLAIN, fontSize));
-        dFont = EZ.app.getFont();
-      }
-      else {
-        System.out.println("ERROR: EZText is unable to use the specified font because it not on this system:" + name);
-        System.out.println("  The change will not be applied.");
-      }
-    } //end else try look up a system font
+      System.out.println("ERROR: EZText is unable to use the specified font because it not on this system:" + name);
+      System.out.println("  The change will not be applied.");
+    }
   } //end setfont to
   
   /**
@@ -1899,47 +1878,9 @@ class EZText extends EZElement {
   public String getFont() {
     return fontName;
   }
-  
-  /**
-   * Checks if the specified ttf file has already been loaded.
-   * If it has will assign fontName and dFont correct value.
-   * @param fName ttf file name to check if was already loaded.
-   * @return true if it was and able to set the value, otherwise false.
-   */
-  private boolean checkIfAlreadyLoaded(String fName) {
-    for(int i = 0; i < loadedFiles.size(); i++) {
-      if( loadedFiles.get(i).equals(fName)){
-        fontName = fName;
-        dFont = loadedFonts.get(i);
-        return true;
-      }
-    }//end for each loaded file name
-    return false;
-  }
-  
-  /**
-   * Will try to load a font from the specified ttf file.
-   * If successful, will correctly set drawing attributes.
-   * Otherwise will output an error, but will not halt the program.
-   * @param fName ttf file to load from.
-   */
-  private void tryLoadFontFromFile(String fName) {
-    try {
-      Font temp = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(fName));
-      fontName = fName;
-      dFont = temp;
-      loadedFonts.add(temp);
-      loadedFiles.add(fName);
-    }
-    catch (Exception e) {
-      e.printStackTrace();
-      System.out.println("ERROR: EZText was unable to load a text from the specified file:" + fName);
-      System.out.println("  The change will not be applied.");
-    }
-  }
-  
-  
+
 } // end visual text class
+
 
 /**
  * The VisualImage is designed to draw an image from a file.
@@ -1966,9 +1907,6 @@ class EZImage extends EZElement {
   protected double yCenter;
   //reference to the image file.
   protected BufferedImage img;
-  
-  protected boolean imgHasFocus;
-  protected int xtlf, ytlf, xbrf, ybrf;
 
   // Images are using static values to reduce memory usage. Otherwise, each time something was created there would be
   // memory set for each object using the image equal to the image size.
@@ -2040,16 +1978,7 @@ class EZImage extends EZElement {
       else {
         AffineTransform tmp = g2.getTransform();
         g2.setTransform(EZElement.transformHelper(this));
-        if(imgHasFocus) {
-          g2.drawImage(img,
-              -(xbrf - xtlf)/2, -(ybrf-ytlf)/2,
-              (xbrf - xtlf)/2, (ybrf-ytlf)/2,
-              xtlf, ytlf,
-              xbrf, ybrf, null);
-        }
-        else {
-          g2.drawImage(img, -img.getWidth() / 2, -img.getHeight() / 2, null);
-        }
+        g2.drawImage(img, -img.getWidth() / 2, -img.getHeight() / 2, null);
         g2.setTransform(tmp);
       }
     }
@@ -2149,41 +2078,6 @@ class EZImage extends EZElement {
     return EZElement.boundHelper(
         new Rectangle(-img.getWidth() / 2, -img.getHeight() / 2, img.getWidth(), img.getHeight()), this);
   }
-  
-  
-  /**
-   * Will set a focus point on the image that will be displayed instead of the entire image. The focus
-   * area will be represented by a rectangle shape formed by two points. The first two parameters
-   * represent the top left corner of the rectangle while the last two parameters represent the bottom right
-   * corner of the rectangle.
-   * The so called left and right points influence the displayed image and are not restricted in placement.
-   * In this manner it is possible to flip images.
-   * @param xTopLeftCorner
-   * @param yTopLeftCorner
-   * @param xBottomRightCorner
-   * @param yBottomRightCorner
-   */
-  public void setFocus(int xTopLeftCorner, int yTopLeftCorner, int xBottomRightCorner, int yBottomRightCorner) {
-    xtlf = xTopLeftCorner;
-    ytlf = yTopLeftCorner;
-    xbrf = xBottomRightCorner;
-    ybrf = yBottomRightCorner;
-    imgHasFocus = true;
-  }
-  
-  /**
-   * If a focus area has been set, it will be released and the entire image will be shown.
-   * Otherwise no effect.
-   */
-  public void releaseFocus() {
-    imgHasFocus = false;
-  }
-  
-  /**
-   * Returns whether or not the image has a focus area set.
-   * @return true if a focus area has been set, otherwise false.
-   */
-  public boolean hasFocus() { return imgHasFocus; }
 
 } // end visual image class
 
@@ -2682,16 +2576,6 @@ class EZInteraction implements KeyListener, MouseInputListener {
   private static long TIMEOUT = 1; // 1 ms storage for clicks.
   private static boolean hasClick;
   private static boolean leftClick = true;
-  private static boolean mlbPressed = false;
-  private static boolean mlbDown = false;
-  private static boolean mlbReleased = false;
-  private static boolean mrbPressed = false;
-  private static boolean mrbDown = false;
-  private static boolean mrbReleased = false;
-  private static long mlbPTime = 0; //used to store their press and release time.
-  private static long mlbRTime = 0;
-  private static long mrbPTime = 0;
-  private static long mrbRTime = 0;
 
   /**
    * Constructor's job is to associate external public reference.
@@ -2699,6 +2583,33 @@ class EZInteraction implements KeyListener, MouseInputListener {
    * */
   public EZInteraction() {
     app = this;
+  }
+  
+  @Override public void mousePressed(MouseEvent me) {
+    // System.out.println("Mouse pressed");
+    mClickX = me.getX();
+    mClickY = me.getY();
+    if (me.getButton() == 1) {
+      leftClick = true;
+    }
+    else {
+      leftClick = false;
+    }
+    hasClick = true;
+  }
+  
+  @Override public void mouseReleased(MouseEvent arg0) {
+  }// System.out.println("Mouse released"); }
+
+  
+  @Override public void mouseExited(MouseEvent arg0) {
+    mMoveX = -1;
+    mMoveY = -1;
+  }
+
+  @Override public void mouseMoved(MouseEvent me) {
+    mMoveX = me.getX();
+    mMoveY = me.getY();
   }
 
   
@@ -2817,143 +2728,6 @@ class EZInteraction implements KeyListener, MouseInputListener {
     }
     return false;
   } // end waskey released
-  
-
-  
-  @Override public void mousePressed(MouseEvent me) {
-    // System.out.println("Mouse pressed");
-    mClickX = me.getX();
-    mClickY = me.getY();
-    if (me.getButton() == 1) {
-      leftClick = true;
-      mlbPressed = true;
-      mlbDown = true;
-      mlbReleased = false;
-      mlbPTime = -1;
-    }
-    else if(me.getButton() == 3) {
-      mrbPressed = true;
-      mrbDown = true;
-      mrbPTime = -1;
-      mrbReleased = false;
-    }
-    else {
-      leftClick = false;
-    }
-    hasClick = true;
-  }
-  
-  @Override public void mouseReleased(MouseEvent me) {
-    if (me.getButton() == 1) { //left
-      mlbPressed = false;
-      mlbDown = false;
-      mlbReleased = true;
-      mlbRTime = -1;
-    }
-    else if(me.getButton() == 3) { //right
-      mrbPressed = false;
-      mrbDown = false;
-      mrbReleased = true;
-      mrbRTime = -1;
-    }
-  }// System.out.println("Mouse released"); }
-
-  
-  /**
-   * Updated version of left button click status.
-   * Used to detect if the left button was pressed.
-   * There is a TIMEOUT associated to allow multiple calls within a particular update.
-   * @return true if the left mouse button was just pressed, otherwise false.
-   */
-  public static boolean wasMouseLeftButtonPressed() {
-    if(mlbPTime == -1 && mlbDown) {  mlbPTime = System.currentTimeMillis();  }
-    if(mlbPTime + TIMEOUT <= System.currentTimeMillis() ) {
-      mlbPressed = false;
-    }
-    return mlbPressed;
-  }
-  /**
-   * Updated version of right button click status.
-   * Used to detect if the right button was pressed.
-   * There is a TIMEOUT associated to allow multiple calls within a particular update.
-   * @return true if the right mouse button was just pressed, otherwise false.
-   */
-  public static boolean wasMouseRightButtonPressed() {
-    if(mrbPTime == -1 && mrbDown) {  mrbPTime = System.currentTimeMillis();  }
-    if(mrbPTime + TIMEOUT <= System.currentTimeMillis() ) {
-      mrbPressed = false;
-    }
-    return mrbPressed;
-  }
-  
-  /**
-   * Used to detect if the left button is down.
-   * @return true if the left mouse button is down, otherwise false.
-   */
-  public static boolean isMouseLeftButtonDown() {
-    return mlbDown;
-  }
-  
-  /**
-   * Used to detect if the right button is down.
-   * @return true if the right mouse button is down, otherwise false.
-   */
-  public static boolean isMouseRightButtonDown() {
-    return mrbDown;
-  }
-  /**
-   * Used to detect if the left button was released.
-   * There is a TIMEOUT associated to allow multiple calls within a particular update.
-   * @return true if the left mouse button was just pressed, otherwise false.
-   */
-  public static boolean wasMouseLeftButtonReleased() {
-    if(mlbRTime == -1 && !mlbDown) {  mlbRTime = System.currentTimeMillis();  }
-    if(mlbRTime + TIMEOUT <= System.currentTimeMillis() ) {
-      mlbReleased = false;
-    }
-    return mlbReleased;
-  }
-  
-  /**
-   * Used to detect if the right button was released.
-   * There is a TIMEOUT associated to allow multiple calls within a particular update.
-   * @return true if the right mouse button was just pressed, otherwise false.
-   */
-  public static boolean wasMouseRightButtonReleased() {
-    if(mrbRTime == -1 && !mrbDown) {  mrbRTime = System.currentTimeMillis();  }
-    if(mrbRTime + TIMEOUT <= System.currentTimeMillis() ) {
-      mrbReleased = false;
-    }
-    return mrbReleased;
-  }
-  
-
-  /**
-   * Returns true if the left button was clicked, false if not. Assumes a mouse only has two buttons.
-   * There are better ways to do this, but requires direct manipulation of this file.
-   * Must be used with get X/Y MouseClick(). That method determines if a click occurred or not.
-   * @return true if the left button was clicked. Otherwise false.
-   * @deprecated Should use wasMouseLeftButtonPressed, wasMouseLeftButtonReleased, isMouseLeftButtonDown instead.
-   */
-  public static boolean getMouseLeftClickStatus() {
-    return leftClick;
-  }
-  
-  
-  @Override public void mouseExited(MouseEvent arg0) {
-    mMoveX = -1;
-    mMoveY = -1;
-  }
-
-  @Override public void mouseMoved(MouseEvent me) {
-    mMoveX = me.getX();
-    mMoveY = me.getY();
-  }
-
-  @Override public void mouseDragged(MouseEvent me) {
-    mMoveX = me.getX();
-    mMoveY = me.getY();
-  }// System.out.println("Mouse drag"); }
 
   /**
    * Used to get the x position of a mouse click.
@@ -3019,12 +2793,25 @@ class EZInteraction implements KeyListener, MouseInputListener {
     return mMoveY;
   }
 
+  /**
+   * Returns true if the left button was clicked, false if not. Assumes a mouse only has two buttons.
+   * There are better ways to do this, but requires direct manipulation of this file.
+   * Must be used with get X/Y MouseClick(). That method determines if a click occurred or not.
+   * @return true if the left button was clicked. Otherwise false.
+   */
+  public static boolean getMouseLeftClickStatus() {
+    return leftClick;
+  }
+
   @Override public void mouseClicked(MouseEvent arg0) {
   }
 
   @Override public void mouseEntered(MouseEvent arg0) {
   }
-  
+
+  @Override public void mouseDragged(MouseEvent arg0) {
+  }// System.out.println("Mouse drag"); }
+
   @Override public void keyTyped(KeyEvent e) {
     // System.out.println("key typed");
   }
@@ -3045,16 +2832,14 @@ class EZSound {
   protected static ArrayList<AudioInputStream> aisList = new ArrayList<AudioInputStream>();
   protected static ArrayList<String> aisFile = new ArrayList<String>();
 
-  //protected Clip sound;
   protected Clip sound;
   protected String filename;
 
-  /*
+  /**
    * This will check the already loaded audio streams to see if the file has already been loaded.
    * 
    * @return Clip of already loaded sound, or null if it doens't find a match.
-   * 
-   //this code has been depreciated
+   * */
   private static Clip checkLoadedSounds(String file) {
     for (int i = 0; i < aisFile.size(); i++) {
       if (aisFile.get(i).equals(file)) {
@@ -3071,15 +2856,15 @@ class EZSound {
       }
     }
     return null;
-  } // end check loaded sounds */
+  } // end check loaded sounds
 
-  /*
+  /***
    * Will first call the check method to see if it was already loaded. If not, it will attempt to open the file, create
    * a new audio input stream, then add it to the repository. In nearly all cases, if it was unsuccessful at opening the
    * file, will stop the program.
    * 
    * @return Clip of valid bind, or null if something went wrong.
-   //this code has been depreciated.
+   */
   private static Clip tryLoadSound(String file) {
     Clip c = checkLoadedSounds(file);
     if (c == null) {
@@ -3096,7 +2881,7 @@ class EZSound {
       }
     }
     return c;
-  } // end try load sound */
+  } // end try load sound
 
   /**
    * Creates a new sound out of the given file. Must be a .wav file.
@@ -3107,7 +2892,6 @@ class EZSound {
    * @param file of the sound to load.
    * */
   public EZSound(String file) {
-    /*
     filename = file;
     sound = tryLoadSound(file);
     if (sound == null) {
@@ -3117,23 +2901,12 @@ class EZSound {
     if (sound == null) {
       reloadClip();
     }
-    */
-    try {
-      AudioInputStream ais = AudioSystem.getAudioInputStream(new File(file).getAbsoluteFile());
-      sound = AudioSystem.getClip();
-      sound.open(ais);
-    }
-    catch (Exception e) {
-      e.printStackTrace();
-      System.out.println("Error loading sound file, it may not exist or another program has a lock on it.");
-      System.exit(1);
-    }
   }// end constructor
 
-  /*
+  /**
    * Will grab a new clip and load another instance of the specified sound file.
    * Edit: may not be necessary.
-   //this code has been depreciated.
+   */
   private void reloadClip() {
     stop();
     for (int i = 0; i < aisFile.size(); i++) {
@@ -3148,107 +2921,49 @@ class EZSound {
         }
       }
     }
-  } // end reload clip*/
+  } // end reload clip
 
   /**
-   * This will play the sound file from wherever the current position is.
-   * 
+   * This will start playing the sound file.
    */
   public void play() {
+    // reloadClip();
+    // sound.start();
+    // old code
+    sound.loop(Clip.LOOP_CONTINUOUSLY);
+    sound.stop();
     sound.start();
   }
 
   /**
-   * This will stop the sound and reset back to the start.
+   * This will stop the sound.
    */
   public void stop() {
+    // sound.stop();
+    // sound.flush();
+    // sound.close();
+
+    // old code:
     sound.stop();
-    sound.setFramePosition(0);
+    // sound.flush();
   } // end stop()
-  
-  /**
-   *  Will pause the sound at it's current position. Using play() will resume from this point.
-   */
-  public void pause() {
-    sound.stop();
-  }
 
   /**
-   * Will play from the start and loop the sound... again... and again... and again...
-   * 
+   * Will play and loop the sound... endlessly... endlessly... endlessly...
    */
   public void loop() {
-    sound.setFramePosition(0);
+    // reloadClip();
+    // sound.loop(Clip.LOOP_CONTINUOUSLY);
+
+    // old code
     sound.loop(Clip.LOOP_CONTINUOUSLY);
   }
-  
-  /** 
-   * Returns how many frames are held within this sound file.
-   * @return Positive int value including zero indicating number of frames.
-   * Otherwise -1 to indicate that the file's length cannot be determined.
-   */
-  public int getFrameLength() {
-    return sound.getFrameLength();
-  }
-  
-  /**
-   * Returns the current frame of the sound file.
-   * @return Positive int value including zero indicating the current frame.
-   */
-  public int getFramePosistion() {
-    return sound.getFramePosition();
-  }
-  
-  /**
-   * Returns the total length of the sound file in microseconds.
-   * @return Positive long value including zero indicating the length of the sound file.
-   * Otherwise -1 to indicate the file's length cannot be determined.
-   */
-  public long getMicroSecondLength() {
-    return sound.getMicrosecondLength();
-  }
-  
-  /**
-   * Returns the current position in microseconds.
-   * @return Positive long value including zero indicating the position in the sound file.
-   * Otherwise -1 to indicate the file's position cannot be determined.
-   */
-  public long getMicroSecondPosition() {
-    return sound.getMicrosecondPosition();
-  }
-  
-  /**
-   * Sets the position in frames from which to continue playing.
-   * This will be overridden if stop() or loop() is called after this(they reset back to start).
-   * @param pos frame of the file to start from.
-   */
-  public void setFramePosition(int pos) {
-    sound.setFramePosition(pos);
-  }
 
-  
-  /**
-   * Sets the position in microseconds from which to continue playing.
-   * This will be overridden if stop() or loop() is called after this(they reset back to start).
-   * Note: the level of precision is based upon ms per frame.
-   * @param pos milliseconds of the file to start from.
-   */
-  public void setMicrosecondPosition(int pos) {
-    sound.setMicrosecondPosition(pos);
-  }
-  
-  
-  /**
-   * Will return the amplitude value based on a scale from 0.0 to 10.0.
-   * Note: this isn't supported by all systems and is greatly influenced by the sound drivers.
+  /*
+   * Unable to figure out volume at the moment.
    * 
-   * @return A positive float value including zero representing the amplitude.
-   * Otherwise -1 to indicate that this is not supported by the system.
-   * @deprecated Because it might not work on your system.
+   * public void volume() { error? }
    */
-  public double getLevel() {
-    return sound.getLevel();
-  }
 
 } // end class
 
