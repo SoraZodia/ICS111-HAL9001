@@ -63,7 +63,7 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
 		  size = reader.nextFloat();
 		  time = reader.nextFloat();
 		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Image to X:%s, Y:%s, Degree:%s, Size:%s in %s secord \n", name,x,y,degree,size,time);
+		  System.out.printf("[%s Log] Image to X:%s, Y:%s, Degree:%s, Size:%s in %s secord \n", name,x,y,degree,size,time);
 		  break;
 
 	  case "move":
@@ -71,92 +71,92 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
 		  y = reader.nextFloat();
 		  time = reader.nextFloat();
 		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Moving to X:%s Y:%s in %s secord \n", name,x,y,time);
+		  System.out.printf("[%s Log] Moving to X:%s Y:%s in %s secord \n", name,x,y,time);
 		  break;
 
 	  case "rotate":
 		  degree = reader.nextFloat();
 		  time = reader.nextFloat();
 		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Rotating to %s degree in %s secord \n", name,degree,time);
+		  System.out.printf("[%s Log] Rotating to %s degree in %s secord \n", name,degree,time);
 		  break;
 
 	  case "resize":
 		  size = reader.nextFloat();
 		  time = reader.nextFloat();
 		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Resizing to x%s pixel in %s secord \n", name,size,time);
+		  System.out.printf("[%s Log] Resizing to x%s pixel in %s secord \n", name,size,time);
 		  break;
 
 	  case "hide":
 		  image.hide();
-		  System.out.printf("[%s] Calling command: %s image \n", name, command);
+		  System.out.printf("[%s Log] Calling command: %s image \n", name, command);
 		  break;
 
 	  case "show":
 		  image.show();
-		  System.out.printf("[%s] Calling command: %s image \n", name, command);
+		  System.out.printf("[%s Log] Calling command: %s image \n", name, command);
 		  break;
 
 	  case "addsound":
 		  soundName = reader.next();
 		  SoundEffect.setPlay(soundName);
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+		  System.out.printf("[%s Log] Calling command: %s, %s \n", name, command, soundName);
 		  break;
 
 	  case "loopsound":
 		  SoundEffect.loop();
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+		  System.out.printf("[%s Log] Calling command: %s, %s \n", name, command, soundName);
 		  break;
 
 	  case "stopsound":
 		  SoundEffect.stop();
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+		  System.out.printf("[%s Log] Calling command: %s, %s \n", name, command, soundName);
 		  break;
 
 	  case "playsound":
 		  SoundEffect.play();
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+		  System.out.printf("[%s Log] Calling command: %s, %s \n", name, command, soundName);
 		  break;
 
 		  //Just a filler command to help with the different actor timing, 
 		  //It can be used as a delay
 	  case "wait":
-		  System.out.printf("[%s] Calling command: %s \n", name, command);
+		  System.out.printf("[%s Log] Calling command: %s \n", name, command);
 		  break;
 
 	  case "background":
 		  backgroundName = reader.next();
 		  Image.addBackground(backgroundName);
-		  System.out.printf("[%s] Adding background: %s \n", name, backgroundName);
+		  System.out.printf("[%s Log] Adding background: %s \n", name, backgroundName);
 		  break;
 
 	  case "layerdownbackground":
 		  push = reader.nextShort();
 		  Image.layerDownBackground(push);
-		  System.out.printf("[%s] Pushing background %s down %s layer \n", name, backgroundName, push);
+		  System.out.printf("[%s Log] Pushing background %s down %s layer \n", name, backgroundName, push);
 		  break;
 
 	  case "layerupbackground":
 		  push = reader.nextShort();
 		  Image.layerUpBackground(push);
-		  System.out.printf("[%s] Pushing background %s up %s layer \n", name, backgroundName, push);
+		  System.out.printf("[%s Log] Pushing background %s up %s layer \n", name, backgroundName, push);
 		  break;
 
 	  case "hidebackground":
 		  Image.hideBackground();
-		  System.out.printf("[%s] Hiding background: %s \n", name, backgroundName);
+		  System.out.printf("[%s Log] Hiding background: %s \n", name, backgroundName);
 		  break;
 
 	  case "showbackground":
 		  Image.showBackground();
-		  System.out.printf("[%s] Showing background: %s \n", name, backgroundName);
+		  System.out.printf("[%s Log] Showing background: %s \n", name, backgroundName);
 		  break;
 
 	  case "resizebackground":
 		  double scale = reader.nextDouble();
 		  Image.resizeBackground(scale);
-		  System.out.printf("[%s] Rescaling background %s to %s\n", name, backgroundName, scale);
+		  System.out.printf("[%s Log] Rescaling background %s to %s\n", name, backgroundName, scale);
 		  break;
 
 	  case "addtext":
@@ -165,17 +165,17 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
 		  int size = reader.nextInt();
 		  text = reader.nextLine();
 		  TextDisplay.addText(text, (int)x, (int)y, size);
-		  System.out.printf("[%s] Adding text -%s-, sized %s, at X: %s and Y: %s \n", name, text, size, x, y);
+		  System.out.printf("[%s Log] Adding text -%s-, sized %s, at X: %s and Y: %s \n", name, text, size, x, y);
 		  break;
 
 	  case "hidetext":
 		  TextDisplay.hideText();
-		  System.out.printf("[%s] Hiding text -%s- \n", name, text);
+		  System.out.printf("[%s Log] Hiding text -%s- \n", name, text);
 		  break;
 
 	  case "showtext":
 		  TextDisplay.showText();
-		  System.out.printf("[%s] Showing text -%s- \n", name, text);
+		  System.out.printf("[%s Log] Showing text -%s- \n", name, text);
 		  break;
 
 	  case "exit":
@@ -191,7 +191,7 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
 		  break;
 
 	  default:
-		  System.out.printf("[%s] ERROR: Unable To Parse Command, Double Check Your Code \n", name);
+		  System.out.printf("[%s Log] ERROR: Unable To Parse Command, Double Check Your Code \n", name);
 		  break;
 	  }
   }
