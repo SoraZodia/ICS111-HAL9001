@@ -24,7 +24,7 @@ public class AntimationEngine {
 		init();
 		
 		//ARRAYS FOR THE WIN
-		IPaser actors[] = 
+		PaserHelper actors[] = 
 			{
 				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 		    };	

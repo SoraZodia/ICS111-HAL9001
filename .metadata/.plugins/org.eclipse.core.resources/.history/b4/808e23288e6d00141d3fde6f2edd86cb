@@ -8,14 +8,14 @@ import com.hal9001.antimation.Image;
 import com.hal9001.antimation.SoundEffect;
 import com.hal9001.antimation.TextDisplay;
 import com.hal9001.main.AntimationEngine;
-import com.hal9001.main.IPaser;
+import com.hal9001.main.PaserHelper;
 
 /**
  * Class that reads the file and send the info into the Image class
  * @author SoraZodia
  *
  */
-public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the convention for class names <_<
+public class edmundgh_FileParser implements PaserHelper{ //Yes Eclipse, I know the convention for class names <_<
   public Scanner reader;
   private Image image;
   private float x;
