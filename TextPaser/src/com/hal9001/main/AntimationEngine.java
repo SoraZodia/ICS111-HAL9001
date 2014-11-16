@@ -20,15 +20,13 @@ public class AntimationEngine {
 	 * @param args
 	 * @throws IOException
 	 */
-	public static void main(String args[]) throws IOException{
+	public static void main(String args[]) throws java.io.IOException{
 		init();
 		
 		//ARRAYS FOR THE WIN
-		edmundgh_FileParser actors[] = 
+		PaserHelper actors[] = 
 			{
-				new edmundgh_FileParser("creeper.txt", "creeper.png", "explosion.wav", EZ.getWindowWidth()/2, 650),
-				new edmundgh_FileParser("witch.txt", "witch.png", "squish.wav", EZ.getWindowWidth()/2, 650),
-				new edmundgh_FileParser("player.txt", "player.png", "cheehoo.wav",EZ.getWindowWidth()/2, 650)
+				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 		    };	
 
 		while(running){
@@ -47,7 +45,7 @@ public class AntimationEngine {
 	 * Sets up EZ
 	 */
 	public static void init(){
-		EZ.initialize(1280,720);
+		EZ.initialize(1280,960);
 		EZ.setBackgroundColor(Color.WHITE);
 	}
 	

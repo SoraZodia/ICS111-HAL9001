@@ -19,6 +19,7 @@ public class Image {
 	private float newDegree, oldDegree;
 	private float oldSize, newSize;
 	private SoundEffect sound;
+	private boolean hasSound = false;
 	
 	//Totally not a Constructor 
 	public Image(String imageName, String soundName, int x, int y){
@@ -28,6 +29,17 @@ public class Image {
 		oldDegree = 0;
 		oldSize = 1;
 		sound = new SoundEffect(soundName, image);
+		hasSound = true;
+		interpolation = false;
+	}
+	
+	public Image(String imageName, int x, int y){
+		image = EZ.addImage(imageName, x, y);
+		startX = x;
+		startY = y;
+		oldDegree = 0;
+		oldSize = 1;
+		hasSound = false;
 		interpolation = false;
 	}
 	
@@ -193,7 +205,7 @@ public class Image {
 	 * Makes the image dances
 	 */
 	public void go(){
-		 sound.doClickSound();
+		 if(hasSound) sound.doClickSound();
 		 interAll(destX, destY, newDegree, newSize);
 	}
 

@@ -7,13 +7,15 @@ import java.util.Scanner;
 import com.hal9001.antimation.Image;
 import com.hal9001.antimation.SoundEffect;
 import com.hal9001.antimation.TextDisplay;
+import com.hal9001.main.AntimationEngine;
+import com.hal9001.main.PaserHelper;
 
 /**
  * Class that reads the file and send the info into the Image class
  * @author SoraZodia
  *
  */
-public class edmundgh_FileParser { //Yes Eclipse, I know the convention for class names <_<
+public class edmundgh_FileParser implements PaserHelper{ //Yes Eclipse, I know the convention for class names <_<
   public Scanner reader;
   private Image image;
   private float x;
@@ -30,8 +32,14 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
   
   //Constructor 
   public edmundgh_FileParser(String fileName, String imageName, String soundName, int x, int y) throws java.io.IOException{
-	  reader = new Scanner(new FileReader(fileName));
-	  image = new Image(imageName, soundName, x, y);
+	  reader = new Scanner(new FileReader("edmundgh_resources/"+fileName));
+	  image = new Image("edmundgh_resources/"+imageName, "edmundgh_resources/"+soundName, x, y);
+	  name = fileName;
+  }
+  
+  public edmundgh_FileParser(String fileName, String imageName, int x, int y) throws java.io.IOException{
+	  reader = new Scanner(new FileReader("edmundgh_resources/"+fileName));
+	  image = new Image("edmundgh_resources/"+imageName, x, y);
 	  name = fileName;
   }
 
@@ -100,7 +108,7 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
 
 	  case "addsound":
 		  soundName = reader.next();
-		  SoundEffect.setPlay(soundName);
+		  SoundEffect.setPlay("edmundgh_resources/"+soundName);
 		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
 		  break;
 
@@ -127,7 +135,7 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
 
 	  case "background":
 		  backgroundName = reader.next();
-		  Image.addBackground(backgroundName);
+		  Image.addBackground("edmundgh_resources/"+backgroundName);
 		  System.out.printf("[%s] Adding background: %s \n", name, backgroundName);
 		  break;
 
@@ -179,10 +187,10 @@ public class edmundgh_FileParser { //Yes Eclipse, I know the convention for clas
 		  break;
 
 	  case "exit":
-		  //AntimationEngine.stop();
-		  //System.out.printf("[%s Log] Closing \n", name);
-		  System.out.println("[System] Command called to exit program");
-		  System.exit(0);
+		  AntimationEngine.stop();
+		  System.out.printf("[%s Log] Closing \n", name);
+		  //System.out.println("[System] Command called to exit program");
+		  //System.exit(0);
 		  break;
 
 		  // Cause the parser to skip the line // is found in
