@@ -46,7 +46,7 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
   /**
    * Reads the file and send to Image to interpret
    */
-  public void read(){
+  private void read(){
 	  if(reader.hasNext() && !image.getMove()){
 		  String command = reader.next();
 		  try{
@@ -254,7 +254,7 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 		  break;
 
 	  case "addtext":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "addtext <message> <text size> <X position> <Y position>"); //If you're wondering, I did this %s thing to make copy paste easier :P
+		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "addtext <X position> <Y position> <text size> <message>"); //If you're wondering, I did this %s thing to make copy paste easier :P
 		  break;
 
 	  default:
@@ -275,6 +275,7 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
    * Makes the images dance
    */
   public void go(){
+	  read();
 	  image.go();
   }
   

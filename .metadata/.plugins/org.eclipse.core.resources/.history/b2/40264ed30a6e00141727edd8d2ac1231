@@ -1,0 +1,6 @@
+background EarthAtmosphere.jpg
+addsound SpaceOddity.wav
+playsound
+move 640 5000 60
+addtext 650 650 40 hi
+showtext

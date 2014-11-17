@@ -2,6 +2,9 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="edmundgh_resources"/>
+	<classpathentry kind="src" path="keonimf_resources"/>
+	<classpathentry kind="src" path="lorink_resources"/>
+	<classpathentry kind="src" path="shaunnk_resources"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

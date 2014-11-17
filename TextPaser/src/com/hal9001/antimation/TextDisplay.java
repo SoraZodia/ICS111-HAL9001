@@ -26,6 +26,7 @@ public class TextDisplay {
 	 * Show the text
 	 */
 	public static void showText(){
+		message.pullToFront();
 		message.show();
 	}
 	

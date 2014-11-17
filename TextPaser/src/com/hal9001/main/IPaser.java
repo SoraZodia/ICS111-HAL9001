@@ -10,8 +10,6 @@ public interface IPaser {
 
 	//These methods can do anything, it's up to you to tell it what to do
 	
-	public void read();
-	
 	public void go();
 	
 }
