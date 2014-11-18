@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.io.IOException;
 
 import com.hal9001.antimation.EZ;
+import com.hal9001.antimation.codywade_Actor;
 import com.hal9001.antimation.keonimf_Actor;
 import com.hal9001.antimation.lorink_TestAnim;
 import com.hal9001.antimation.shaunnk_Animator;
@@ -43,6 +44,9 @@ public class AntimationEngine {
 				new shaunnk_Animator("JEFF.txt", "King of the Hill.wav", "Jeff_Boomhauer.png", 225, 310),
 				new shaunnk_Animator("PROPANE.txt", "King of the Hill.wav", "propane_tank.png", 1000, 200),
 				new shaunnk_Animator("TEXAS.txt", "King of the Hill.wav", "Texas_converted.png", 1500, 250),
+				new codywade_Actor("pizza.png","animator3.txt"),
+				new codywade_Actor("patrick.gif","animator2.txt"),
+				new codywade_Actor("earth.gif","animator.txt")
 			};	
 
 		while(running){

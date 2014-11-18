@@ -18,10 +18,7 @@ public class keonimf_Actor implements IPaser{
 	private double scale;
 	String Script;
 	Scanner fileScanner;
-	
 
-	
-	
 	public keonimf_Actor(String filename, String script, int stx, int sty)throws java.io.IOException{
 		Script = script;
 		x=stx; y=sty;
