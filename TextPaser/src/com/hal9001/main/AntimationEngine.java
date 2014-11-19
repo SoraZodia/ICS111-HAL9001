@@ -48,6 +48,8 @@ public class AntimationEngine {
 				new codywade_Actor("patrick.gif","animator2.txt"),
 				new codywade_Actor("earth.gif","animator.txt")
 			};	
+		
+		//trying to see if this works
 
 		while(running){
 			for(int x = 0; x < actors.length; x++){
