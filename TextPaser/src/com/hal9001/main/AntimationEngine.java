@@ -16,7 +16,7 @@ import com.hal9001.filereader.edmundgh_FileParser;
  *
  */
 public class AntimationEngine {
-	//Hi
+	
 	private static boolean running = true;
 	
 	/**
