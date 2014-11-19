@@ -8,6 +8,12 @@ Desktop.ini
 # Recycle Bin used on file shares
 $RECYCLE.BIN/
 
+#Ecilpse Stuff
+.metadata\*
+bin\*
+*.classpath
+*.project
+
 # Windows Installer files
 *.cab
 *.msi
