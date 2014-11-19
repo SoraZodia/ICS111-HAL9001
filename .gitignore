@@ -9,8 +9,8 @@ Desktop.ini
 $RECYCLE.BIN/
 
 #Ecilpse Stuff
-.metadata\*
-bin\*
+.metadata/*
+bin/*
 *.classpath
 *.project
 
