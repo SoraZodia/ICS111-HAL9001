@@ -1,8 +1,5 @@
-
-control 300 50 0 .5 2
-control 250 550 180 1 2
-control 400 50 180 1 2 
-control 500 550 180 1 2
-control 600 70 180 1.5 2
-control 400 525 180 1 2
-control 450 300	180 1 2
+control 569 470 0 1.2 3
+control 1800 470 0 2.3 5
+control 920 350 0 .2 3
+control 920 350 270 .5 0
+control 620 350 0 .5 3
