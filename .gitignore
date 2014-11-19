@@ -11,8 +11,6 @@ $RECYCLE.BIN/
 #Ecilpse Stuff
 .metadata/*
 bin/*
-*.classpath
-*.project
 
 # Windows Installer files
 *.cab
