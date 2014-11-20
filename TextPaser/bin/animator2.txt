@@ -1,6 +1,0 @@
-control 0 0 0 2 3
-control 100 90 2 1.5 1
-control 100 50 0 2.0 1
-control 100 50 0 10.0 1
-control 100 50 0 3.0 1
-control 100 50 0 .8 1
