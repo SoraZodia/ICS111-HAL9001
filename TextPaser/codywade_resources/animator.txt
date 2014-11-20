@@ -4,4 +4,5 @@ control 50 550 22 .5 2
 control 775 30 21 .5 2
 control 40 30 21 1 2
 control 450 300 180 20 1
-contorl 450 300 90 1 1
+control 450 300 90 1 1
+control 450 300 90 1 1
