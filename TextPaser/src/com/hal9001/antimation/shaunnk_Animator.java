@@ -27,7 +27,7 @@ public class shaunnk_Animator implements IPaser{
 
 		song = EZ.addSound("shaunnk_resources/"+songfile);
 
-		song.play();
+		//song.play(); 
 
 		interpolation = false;
 

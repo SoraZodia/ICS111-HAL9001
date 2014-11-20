@@ -31,7 +31,10 @@ public class AntimationEngine {
 		IPaser actors[] = 
 			{
 				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-				new edmundgh_FileParser("shuttle.txt", "Shuttle.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new edmundgh_FileParser("shuttleExtank.txt", "ShuttleExtank.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new edmundgh_FileParser("shuttleLiTank1.txt", "ShuttleLiTank.png", (EZ.getWindowWidth()/2)+140, (EZ.getWindowHeight()/2)+100),
+				new edmundgh_FileParser("shuttleLiTank2.txt", "ShuttleLiTank.png", (EZ.getWindowWidth()/2)-140, (EZ.getWindowHeight()/2)+100),
+				new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60),
 				new keonimf_Actor("hwpup.png","animator.txt", 950,256),
 				new keonimf_Actor("bat.png","animator2.txt", 1800,500),
 				new keonimf_Actor("ghostpv1.png","animator3.txt", 10,50),
