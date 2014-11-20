@@ -11,6 +11,7 @@ $RECYCLE.BIN/
 #Ecilpse Stuff
 .metadata/*
 bin/*
+TextPaser/bin/*
 
 # Windows Installer files
 *.cab
