@@ -27,7 +27,7 @@ public class AntimationEngine {
 	public static void main(String args[]) throws java.io.IOException{
 		init();
 		
-		//ARRAYS AND PLOYMORPHISM FOR THE WIN
+		//ARRAY AND PLOYMORPHISM FOR THE WIN
 		IPaser actors[] = 
 			{
 				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
