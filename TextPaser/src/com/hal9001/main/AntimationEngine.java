@@ -27,7 +27,7 @@ public class AntimationEngine {
 	public static void main(String args[]) throws java.io.IOException{
 		init();
 		
-		//ARRAYS FOR THE WIN
+		//ARRAYS AND PLOYMORPHISM FOR THE WIN
 		IPaser actors[] = 
 			{
 				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
@@ -41,12 +41,12 @@ public class AntimationEngine {
 				new lorink_TestAnim("Patrick.png", "control.txt"),
 				new lorink_TestAnim("Patrick.png", "control2.txt"),
 				new lorink_TestAnim("Patrick.png", "control3.txt"),
-				new shaunnk_Animator("HANK.txt", "King of the Hill.wav", "Hank_Hill.png", 375, 310),
-				new shaunnk_Animator("BILL.txt", "King of the Hill.wav", "Bill_Dauterive.png", 760, 310),
-				new shaunnk_Animator("DALE.txt", "King of the Hill.wav", "Dale_Gribble.png", 115, 310),
-				new shaunnk_Animator("JEFF.txt", "King of the Hill.wav", "Jeff_Boomhauer.png", 225, 310),
-				new shaunnk_Animator("PROPANE.txt", "King of the Hill.wav", "propane_tank.png", 1000, 200),
-				new shaunnk_Animator("TEXAS.txt", "King of the Hill.wav", "Texas_converted.png", 1500, 250),
+				new shaunnk_Animator("HANK.txt", "Hank_Hill.png", 375, 310),
+				new shaunnk_Animator("BILL.txt", "Bill_Dauterive.png", 760, 310),
+				new shaunnk_Animator("DALE.txt", "Dale_Gribble.png", 115, 310),
+				new shaunnk_Animator("JEFF.txt", "Jeff_Boomhauer.png", 225, 310),
+				new shaunnk_Animator("PROPANE.txt", "propane_tank.png", 1000, 200),
+				new shaunnk_Animator("TEXAS.txt", "Texas_converted.png", 1500, 250),
 				new codywade_Actor("pizza.png","animator3.txt"),
 				new codywade_Actor("patrick.gif","animator2.txt"),
 				new codywade_Actor("earth.gif","animator.txt")
@@ -67,8 +67,8 @@ public class AntimationEngine {
 	 * Sets up EZ
 	 */
 	public static void init(){
-		EZ.initialize(1280,960);
-		EZ.setBackgroundColor(Color.WHITE);
+		EZ.initialize(1280,735);
+		EZ.setBackgroundColor(Color.BLACK);
 	}
 	
 	public static void stop(){

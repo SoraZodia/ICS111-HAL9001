@@ -18,14 +18,14 @@ public class shaunnk_Animator implements IPaser{
 	private long starttime, duration;
 	private boolean interpolation;
 
-	public shaunnk_Animator(String textfile, String songfile, String image, int x, int y)
+	public shaunnk_Animator(String textfile, String image, int x, int y)
 			throws java.io.IOException {
 
 		scan = new Scanner(new FileReader("shaunnk_resources/"+textfile));
 
 		pic = EZ.addImage("shaunnk_resources/"+image, x, y);
 
-		song = EZ.addSound("shaunnk_resources/"+songfile);
+		//song = EZ.addSound("shaunnk_resources/"+songfile);
 
 		//song.play(); 
 
