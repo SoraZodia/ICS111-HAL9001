@@ -12,7 +12,7 @@ public class shaunnk_Animator implements IPaser{
 	Scanner scan;
 	String instruction;
 
-	private int x, y, startx, starty, destx, desty;
+	private double x, y, startx, starty, destx, desty;
 	private double angle, startAngle, endAngle;
 	private double size, startSize, endSize;
 	private long starttime, duration;
@@ -33,7 +33,7 @@ public class shaunnk_Animator implements IPaser{
 
 	}
 
-	public void move(int posx, int posy, long dur) {
+	public void move(double posx, double posy, long dur) {
 		interpolation = true;
 		startx = pic.getXCenter();
 		starty = pic.getYCenter();
@@ -98,10 +98,10 @@ public class shaunnk_Animator implements IPaser{
 			case "COMMAND":
 
 				// interpolation = false;
-				x = scan.nextInt();
-				y = scan.nextInt();
+				x = scan.nextDouble();
+				y = scan.nextDouble();
 				angle = scan.nextDouble();
-				size = scan.nextInt();
+				size = scan.nextDouble();
 				duration = scan.nextInt();
 				move(x, y, duration);
 				rotate(angle, duration);
