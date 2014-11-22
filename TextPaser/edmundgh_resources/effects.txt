@@ -1,5 +1,4 @@
 hide
+addtext 640 650 40 Space Oddity (Sped up)
 addsound SpaceOddity.wav
 playsound
-move 640 5000 600
-addtext 640 650 40 hi
