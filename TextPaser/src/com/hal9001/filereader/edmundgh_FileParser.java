@@ -127,8 +127,20 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
 		  break;
 
+	  case "layerdown":
+		  push = reader.nextShort();
+		  image.layerDownImage(push);
+		  System.out.printf("[%s] Pushing down %s layer \n", name, push);
+		  break;
+
+	  case "layerup":
+		  push = reader.nextShort();
+		  image.layerUpImage(push);
+		  System.out.printf("[%s] Pushing up %s layer \n", name, push);
+		  break;
+		  
 		  //Just a filler command to help with the different actor timing, 
-		  //It can be used as a delay
+		  //It can be used as a delay... Maybe
 	  case "wait":
 		  System.out.printf("[%s] Calling command: %s \n", name, command);
 		  break;
@@ -232,7 +244,15 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 	  case "addsound":
 		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "addsound <FULL file name of sound, including its extension(.png, .jpg, etc.)>");
 		  break;
+		  
+	  case "layerdown":
+		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "layerdown <number of layers to pass>");
+		  break;
 
+	  case "layerup":
+		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "layerup <number of layers to pass>");
+		  break;
+		  
 	  case "background":
 		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "background <FULL file name of background, including its extension(.png, .jpg, etc.)>");
 		  break;

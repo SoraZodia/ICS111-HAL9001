@@ -95,6 +95,25 @@ public class Image {
 	}
 	
 	/**
+	 * Pull the image up x number of times
+	 */
+	public void layerUpImage(short layer){
+		for(short x = 0; x < layer; x++){
+		image.pullForwardOneLayer();
+		}
+	}
+	
+	/**
+	 * Push the image down x number of times
+	 */
+	public void layerDownImage(short layer){
+		for(short x = 0; x < layer; x++){
+		image.pushBackOneLayer();
+		}
+	}
+	
+	
+	/**
 	 * Set the translate, spin, and resize value of the image as well as
 	 * the time range it should finish everything in
 	 * @param x
