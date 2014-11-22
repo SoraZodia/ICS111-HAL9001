@@ -30,6 +30,11 @@ public class AntimationEngine {
 		//ARRAY AND PLOYMORPHISM FOR THE WIN
 		IPaser actors[] = 
 			{
+				//shaun's actors
+				new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new shaunnk_Animator("ATMOSPHERE.txt", "EarthAtmosphere.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()/2),
+				new shaunnk_Animator("STARS1.txt", "Stars1.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
+				
 				//cody's actors
 				new codywade_Actor("earth-pic.png","animator3.txt"),
 				new codywade_Actor("venus-pic.png","animator2.txt"),
@@ -44,11 +49,6 @@ public class AntimationEngine {
 				new lorink_TestAnim("asteroid1-pic.png", "control.txt"),
 				new lorink_TestAnim("asteroid2-pic.png", "control2.txt"),
 				new lorink_TestAnim("saturn-pic.png", "control3.txt"),
-				
-				//shaun's actors
-				new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-				new shaunnk_Animator("ATMOSPHERE.txt", "EarthAtmosphere.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()/2),
-				new shaunnk_Animator("STARS1.txt", "Stars1.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
 			    
 				//edmund's actors
 				new edmundgh_FileParser("shuttleExtank.txt", "ShuttleExtank.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
