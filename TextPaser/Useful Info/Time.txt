@@ -1,6 +1,7 @@
 Just logging the time of when the text bubbles appear on screen.
 This is probably the closest the text bubbles will be to matching the time of the lyrics.
 Feel free to update/change/move/etc.
+I have the bubbles in an arbitrary position/size to get the timing down.
 
 will be logged as " line of text // start time (how much time has elapsed before it appears) "
 
