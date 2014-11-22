@@ -189,12 +189,14 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 		  break;
 
 	  case "hidetext":
-		  TextDisplay.hideText();
+		  text = reader.nextLine();
+		  TextDisplay.hideText(text);
 		  System.out.printf("[%s] Hiding text -%s- \n", name, text);
 		  break;
 
 	  case "showtext":
-		  TextDisplay.showText();
+		  text = reader.nextLine();
+		  TextDisplay.showText(text);
 		  System.out.printf("[%s] Showing text -%s- \n", name, text);
 		  break;
 
@@ -275,6 +277,14 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 
 	  case "addtext":
 		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "addtext <X position> <Y position> <text size> <message>"); //If you're wondering, I did this %s thing to make copy paste easier :P
+		  break;
+		  
+	  case "hidetext":
+		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "hidetext <message>");
+		  break;
+
+	  case "showtext":
+		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "showtext <message>");
 		  break;
 
 	  default:
