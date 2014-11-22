@@ -30,17 +30,8 @@ public class AntimationEngine {
 		//ARRAY AND PLOYMORPHISM FOR THE WIN
 		IPaser actors[] = 
 			{
-<<<<<<< HEAD
 				/*//shaun's actors
 				new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-=======
-				//shaun's actors
-<<<<<<< HEAD
-				new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-=======
-				/*new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
->>>>>>> origin/master
->>>>>>> origin/master
 				new shaunnk_Animator("ATMOSPHERE.txt", "EarthAtmosphere.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()/2),
 				new shaunnk_Animator("STARS1.txt", "Stars1.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
 				
@@ -71,28 +62,13 @@ public class AntimationEngine {
 				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
 
 				new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60),
-<<<<<<< HEAD
+
+				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
+ */
 				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
 				
 				new lorink_TestAnim("slidechange-pic.png", "control.txt")
 
-=======
-<<<<<<< HEAD
-				new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60),
-				new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60), */
-				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
-=======
-				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), */
-<<<<<<< HEAD
-=======
-				
-				new lorink_TestAnim("slidechange-pic.png", "control.txt")
->>>>>>> origin/master
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
->>>>>>> 3162009841ca78ecd9bb3e97bb6709b75631960d
->>>>>>> origin/master
 			};	
 
 		while(running){
