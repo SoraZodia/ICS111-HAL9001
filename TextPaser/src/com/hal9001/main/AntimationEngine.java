@@ -36,8 +36,8 @@ public class AntimationEngine {
 				new codywade_Actor("mars-pic.png","animator.txt"),
 				
 				//keoni's actors
-				new keonimf_Actor("hwpup.png","animator.txt", 950,256),
-				new keonimf_Actor("bat.png","animator2.txt", 1800,500),
+				//new keonimf_Actor("hwpup.png","animator.txt", 950,256),
+				//new keonimf_Actor("bat.png","animator2.txt", 1800,500),
 				new keonimf_Actor("Moon.png","animator3.txt", 10,50),
 				
 				//lorin's actors
