@@ -31,9 +31,9 @@ public class AntimationEngine {
 		IPaser actors[] = 
 			{
 				//cody's actors
-				new codywade_Actor("pizza.png","animator3.txt"),
-				new codywade_Actor("patrick.gif","animator2.txt"),
-				new codywade_Actor("earth.gif","animator.txt"),
+				new codywade_Actor("earth-pic.png","animator3.txt"),
+				new codywade_Actor("venus-pic.png","animator2.txt"),
+				new codywade_Actor("mars-pic.png","animator.txt"),
 				
 				//keoni's actors
 				new keonimf_Actor("hwpup.png","animator.txt", 950,256),
