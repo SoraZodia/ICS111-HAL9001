@@ -1,0 +1,7 @@
+control 1000 600 0 1 6 false true
+control 1000 600 0 1 4 true true
+control 1000 600 0 1 2 false true
+control 1000 600 0 1 4 true true
+control 1000 600 0 1 8 false true
+control 1000 600 0 1 4 true true
+control 1000 600 0 1 0 false true

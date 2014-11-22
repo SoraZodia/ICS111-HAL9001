@@ -1,0 +1,18 @@
+Just logging the time of when the text bubbles appear on screen.
+This is probably the closest the text bubbles will be to matching the time of the lyrics.
+Feel free to update/change/move/etc.
+
+will be logged as " line of text // start time (how much time has elapsed before it appears) "
+
+"Ground control to Major Tom" // 6 seconds
+
+"Ground control to Major Tom" (2nd time) // 12 seconds
+
+"Take your protein pills and put your helmet on" // 18 seconds
+
+"Ground control to Major Tom" (3rd time) // 24 seconds
+
+"Commencing countdown, engines on" // 30 seconds
+
+"Check ignition and may God's love be with youuuuuuuu" // 36 seconds
+
