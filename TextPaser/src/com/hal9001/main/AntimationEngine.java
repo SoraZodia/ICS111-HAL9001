@@ -49,9 +49,6 @@ public class AntimationEngine {
 				new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new shaunnk_Animator("ATMOSPHERE.txt", "EarthAtmosphere.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()/2),
 				new shaunnk_Animator("STARS1.txt", "Stars1.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
-				new shaunnk_Animator("JEFF.txt", "Jeff_Boomhauer.png", 225, 310),
-				new shaunnk_Animator("PROPANE.txt", "propane_tank.png", 1000, 200),
-				new shaunnk_Animator("TEXAS.txt", "Texas_converted.png", 1500, 250),
 			    
 				//edmund's actors
 				new edmundgh_FileParser("shuttleExtank.txt", "ShuttleExtank.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
