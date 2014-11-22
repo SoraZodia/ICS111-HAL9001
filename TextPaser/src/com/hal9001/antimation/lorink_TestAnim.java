@@ -18,6 +18,7 @@ public class lorink_TestAnim implements IPaser{
 		Scanner reader;
 		private int comx, comy, comdur, comangle;
 		private boolean visible;
+		private boolean layer;
 		
 		public lorink_TestAnim(String picturename, String filename) throws java.io.IOException{
 			Actor = EZ.addImage("lorink_resources/"+picturename, x, y);
@@ -42,6 +43,7 @@ public class lorink_TestAnim implements IPaser{
 						comscale = reader.nextFloat();
 						comdur = reader.nextInt();
 						visible = reader.nextBoolean();
+						layer = reader.nextBoolean();
 						
 						break;
 					}
@@ -49,7 +51,7 @@ public class lorink_TestAnim implements IPaser{
 			}
 		}
 		
-		public void Control(int posx, int posy, int angle1, float scale1, long dur, boolean showing){
+		public void Control(int posx, int posy, int angle1, float scale1, long dur, boolean showing, boolean foreground){
 			destx = posx; desty = posy;
 			destangle = angle1;
 			destscale = scale1;
@@ -67,6 +69,13 @@ public class lorink_TestAnim implements IPaser{
 			}
 			else if(!showing){
 				Actor.hide();
+			}
+			
+			if(foreground){
+				Actor.pullToFront();
+			}
+			else if(!foreground){
+				Actor.pushToBack();
 			}
 			
 			interpolation = true;
@@ -101,7 +110,7 @@ public class lorink_TestAnim implements IPaser{
 			
 			switch(command){
 			case "control":
-				Control(comx, comy, comangle, comscale, comdur, visible);
+				Control(comx, comy, comangle, comscale, comdur, visible, layer);
 				break;
 			}
 			
