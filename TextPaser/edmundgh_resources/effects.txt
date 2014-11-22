@@ -1,3 +1,4 @@
+hide
 addsound SpaceOddity.wav
 playsound
 move 640 5000 600
