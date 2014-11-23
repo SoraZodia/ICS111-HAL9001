@@ -44,252 +44,172 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
   }
 
   /**
-   * Reads the file and send to Image to interpret
-   */
-  private void read(){
-	  if(reader.hasNext() && !image.getMove()){
-		  String command = reader.next();
-		  try{
-			  parse(command);
-		  }
-		  catch(InputMismatchException error){
-			  parseError(command);
-		  }
-	  }
-
-  }
-  
-  /**
    * Translate the command into Java code
    */
-  private void parse(String command){
-	  switch(command.toLowerCase()){
-	  case "control":
-		  x = reader.nextFloat();
-		  y = reader.nextFloat();
-		  degree = reader.nextFloat();
-		  size = reader.nextFloat();
-		  time = reader.nextFloat();
-		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Image to X:%s, Y:%s, Degree:%s, Size:%s in %s secord \n", name,x,y,degree,size,time);
-		  break;
+  private void read(){ 
+	  if(reader.hasNext() && !image.getMove()){
+		  String command = reader.next();
+		  switch(command.toLowerCase()){
+		  case "control":
+			  x = reader.nextFloat();
+			  y = reader.nextFloat();
+			  degree = reader.nextFloat();
+			  size = reader.nextFloat();
+			  time = reader.nextFloat();
+			  image.setInterpolAll(x, y, degree, size, time);
+			  System.out.printf("[%s] Image to X:%s, Y:%s, Degree:%s, Size:%s in %s secord \n", name,x,y,degree,size,time);
+			  break;
 
-	  case "move":
-		  x = reader.nextFloat();
-		  y = reader.nextFloat();
-		  time = reader.nextFloat();
-		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Moving to X:%s Y:%s in %s secord \n", name,x,y,time);
-		  break;
+		  case "move":
+			  x = reader.nextFloat();
+			  y = reader.nextFloat();
+			  time = reader.nextFloat();
+			  image.setInterpolAll(x, y, degree, size, time);
+			  System.out.printf("[%s] Moving to X:%s Y:%s in %s secord \n", name,x,y,time);
+			  break;
 
-	  case "rotate":
-		  degree = reader.nextFloat();
-		  time = reader.nextFloat();
-		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Rotating to %s degree in %s secord \n", name,degree,time);
-		  break;
+		  case "rotate":
+			  degree = reader.nextFloat();
+			  time = reader.nextFloat();
+			  image.setInterpolAll(x, y, degree, size, time);
+			  System.out.printf("[%s] Rotating to %s degree in %s secord \n", name,degree,time);
+			  break;
 
-	  case "resize":
-		  size = reader.nextFloat();
-		  time = reader.nextFloat();
-		  image.setInterpolAll(x, y, degree, size, time);
-		  System.out.printf("[%s] Resizing to x%s pixel in %s secord \n", name,size,time);
-		  break;
+		  case "resize":
+			  size = reader.nextFloat();
+			  time = reader.nextFloat();
+			  image.setInterpolAll(x, y, degree, size, time);
+			  System.out.printf("[%s] Resizing to x%s pixel in %s secord \n", name,size,time);
+			  break;
 
-	  case "hide":
-		  image.hide();
-		  System.out.printf("[%s] Calling command: %s image \n", name, command);
-		  break;
+		  case "hide":
+			  image.hide();
+			  System.out.printf("[%s] Calling command: %s image \n", name, command);
+			  break;
 
-	  case "show":
-		  image.show();
-		  System.out.printf("[%s] Calling command: %s image \n", name, command);
-		  break;
+		  case "show":
+			  image.show();
+			  System.out.printf("[%s] Calling command: %s image \n", name, command);
+			  break;
 
-	  case "addsound":
-		  soundName = reader.next();
-		  SoundEffect.setPlay("edmundgh_resources/"+soundName);
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-		  break;
+		  case "addsound":
+			  soundName = reader.next();
+			  SoundEffect.setPlay(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
 
-	  case "loopsound":
-		  SoundEffect.loop();
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-		  break;
+		  case "loopsound":
+			  soundName = reader.next();
+			  SoundEffect.loop(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
 
-	  case "stopsound":
-		  SoundEffect.stop();
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-		  break;
+		  case "stopsound":
+			  soundName = reader.next();
+			  SoundEffect.stop(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
 
-	  case "playsound":
-		  SoundEffect.play();
-		  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-		  break;
+		  case "playsound":
+			  soundName = reader.next();
+			  SoundEffect.play(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
 
-	  case "layerdown":
-		  push = reader.nextShort();
-		  image.layerDownImage(push);
-		  System.out.printf("[%s] Pushing down %s layer \n", name, push);
-		  break;
+		  case "layerdown":
+			  push = reader.nextShort();
+			  image.layerDownImage(push);
+			  System.out.printf("[%s] Pushing down %s layer \n", name, push);
+			  break;
 
-	  case "layerup":
-		  push = reader.nextShort();
-		  image.layerUpImage(push);
-		  System.out.printf("[%s] Pushing up %s layer \n", name, push);
-		  break;
-		  
-		  //Just a filler command to help with the different actor timing, 
-		  //It can be used as a delay... Maybe
-	  case "wait":
-		  System.out.printf("[%s] Calling command: %s \n", name, command);
-		  break;
+		  case "layerup":
+			  push = reader.nextShort();
+			  image.layerUpImage(push);
+			  System.out.printf("[%s] Pushing up %s layer \n", name, push);
+			  break;
+			  
+			  //Just a filler command to help with the different actor timing, 
+			  //It can be used as a delay... Maybe
+		  case "wait":
+			  System.out.printf("[%s] Calling command: %s \n", name, command);
+			  break;
 
-	  case "background":
-		  backgroundName = reader.next();
-		  Image.addBackground("edmundgh_resources/"+backgroundName);
-		  System.out.printf("[%s] Adding background: %s \n", name, backgroundName);
-		  break;
+		  case "background":
+			  backgroundName = reader.next();
+			  Image.addBackground(backgroundName);
+			  System.out.printf("[%s] Adding background: %s \n", name, backgroundName);
+			  break;
 
-	  case "layerdownbackground":
-		  push = reader.nextShort();
-		  Image.layerDownBackground(push);
-		  System.out.printf("[%s] Pushing background %s down %s layer \n", name, backgroundName, push);
-		  break;
+		  case "layerdownbackground":
+			  backgroundName = reader.next();
+			  push = reader.nextShort();
+			  Image.layerDownBackground(backgroundName, push);
+			  System.out.printf("[%s] Pushing background %s down %s layer \n", name, backgroundName, push);
+			  break;
 
-	  case "layerupbackground":
-		  push = reader.nextShort();
-		  Image.layerUpBackground(push);
-		  System.out.printf("[%s] Pushing background %s up %s layer \n", name, backgroundName, push);
-		  break;
+		  case "layerupbackground":
+			  backgroundName = reader.next();
+			  push = reader.nextShort();
+			  Image.layerUpBackground(backgroundName, push);
+			  System.out.printf("[%s] Pushing background %s up %s layer \n", name, backgroundName, push);
+			  break;
 
-	  case "hidebackground":
-		  Image.hideBackground();
-		  System.out.printf("[%s] Hiding background: %s \n", name, backgroundName);
-		  break;
+		  case "hidebackground":
+			  backgroundName = reader.next();
+			  Image.hideBackground(backgroundName);
+			  System.out.printf("[%s] Hiding background: %s \n", name, backgroundName);
+			  break;
 
-	  case "showbackground":
-		  Image.showBackground();
-		  System.out.printf("[%s] Showing background: %s \n", name, backgroundName);
-		  break;
+		  case "showbackground":
+			  backgroundName = reader.next();
+			  Image.showBackground(backgroundName);
+			  System.out.printf("[%s] Showing background: %s \n", name, backgroundName);
+			  break;
 
-	  case "resizebackground":
-		  double scale = reader.nextDouble();
-		  Image.resizeBackground(scale);
-		  System.out.printf("[%s] Rescaling background %s to %s\n", name, backgroundName, scale);
-		  break;
+		  case "resizebackground":
+			  backgroundName = reader.next();
+			  double scale = reader.nextDouble();
+			  Image.resizeBackground(backgroundName, scale);
+			  System.out.printf("[%s] Rescaling background %s to %s\n", name, backgroundName, scale);
+			  break;
 
-	  case "addtext":
-		  x = reader.nextFloat();
-		  y = reader.nextFloat();
-		  int size = reader.nextInt();
-		  text = reader.nextLine();
-		  TextDisplay.addText(text, (int)x, (int)y, size);
-		  System.out.printf("[%s] Adding text -%s-, sized %s, at X: %s and Y: %s \n", name, text, size, x, y);
-		  break;
+		  case "addtext":
+			  x = reader.nextFloat();
+			  y = reader.nextFloat();
+			  int size = reader.nextInt();
+			  text = reader.nextLine();
+			  TextDisplay.addText(text, (int)x, (int)y, size);
+			  System.out.printf("[%s] Adding text -%s-, sized %s, at X: %s and Y: %s \n", name, text, size, x, y);
+			  break;
 
-	  case "hidetext":
-		  text = reader.nextLine();
-		  TextDisplay.hideText(text);
-		  System.out.printf("[%s] Hiding text -%s- \n", name, text);
-		  break;
+		  case "hidetext":
+			  text = reader.nextLine();
+			  TextDisplay.hideText(text);
+			  System.out.printf("[%s] Hiding text -%s- \n", name, text);
+			  break;
 
-	  case "showtext":
-		  text = reader.nextLine();
-		  TextDisplay.showText(text);
-		  System.out.printf("[%s] Showing text -%s- \n", name, text);
-		  break;
+		  case "showtext":
+			  text = reader.nextLine();
+			  TextDisplay.showText(text);
+			  System.out.printf("[%s] Showing text -%s- \n", name, text);
+			  break;
 
-	  case "exit":
-		  AntimationEngine.stop();
-		  System.out.printf("[%s Log] Closing \n", name);
-		  //System.out.println("[System] Command called to exit program");
-		  //System.exit(0);
-		  break;
+		  case "exit":
+			  AntimationEngine.stop();
+			  System.out.printf("[%s Log] Closing \n", name);
+			  //System.out.println("[System] Command called to exit program");
+			  //System.exit(0);
+			  break;
 
-		  // Cause the parser to skip the line // is found in
-	  case "//":
-		  reader.nextLine();
-		  break;
+			  // Cause the parser to skip the line // is found in
+		  case "//":
+			  reader.nextLine();
+			  break;
 
-	  default:
-		  System.out.printf("[%s] ERROR: Unable To Parse Command, Double Check Your Code \n", name);
-		  break;
-	  }
-  }
-  
-  /**
-   * If user entered an incomplete command, this is to be called to inform them
-   * of the proper usage. This is only able to detect parameters mirror not 
-   * spelling errors, commands such as "showtext" 
-   * will not work due to their lack of parameters.
-   * @param command
-   */
-  private void parseError(String command){
-	  switch(command.toLowerCase()){
-	  case "control":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command,"control <target X position> <target Y position> <the degree to turn> <number which the picture's pixel will be muiltple/divdled by> <how fast/slow it will take (in secords)>");
-		  break;
-
-	  case "move":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "move <target X position> <target Y position> <how fast/slow it will take (in secords)>");
-		  break;
-
-	  case "rotate":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command,"rotate <the degree to turn> <how fast/slow it will take (in secords)>");
-		  break;
-
-	  case "resize":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command,"resize <number which the picture's pixel will be muiltple/divdled by> <how fast/slow it will take (in secords)>");
-		  break;
-
-	  case "addsound":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "addsound <FULL file name of sound, including its extension(.png, .jpg, etc.)>");
-		  break;
-		  
-	  case "layerdown":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "layerdown <number of layers to pass>");
-		  break;
-
-	  case "layerup":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "layerup <number of layers to pass>");
-		  break;
-		  
-	  case "background":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "background <FULL file name of background, including its extension(.png, .jpg, etc.)>");
-		  break;
-		  
-	  case "layerdownbackground":
-		  push = reader.nextShort();
-		  Image.layerDownBackground(push);
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "layerdownbackground <number of layer to be push back by>");
-		  break;
-
-	  case "layerupbackground":
-		  push = reader.nextShort();
-		  Image.layerUpBackground(push);
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "layerupbackground <number of layer to be pull up by>");
-		  break;
-		  
-	  case "resizebackground":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "resizebackground <FULL name of background, including its extension(.png, .jpg, etc.)> <number which the picture's pixel will be muiltple/divdled by>");
-		  break;
-
-	  case "addtext":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "addtext <X position> <Y position> <text size> <message>"); //If you're wondering, I did this %s thing to make copy paste easier :P
-		  break;
-		  
-	  case "hidetext":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "hidetext <message>");
-		  break;
-
-	  case "showtext":
-		  System.out.printf("[Parameter Error] %s need to be entered as \n %s \n", command, "showtext <message>");
-		  break;
-
-	  default:
-		  System.out.printf("[General Error] ERROR: Unable To Parse Command, Double Check Your Code \n");
-		  break;
+		  default:
+			  System.out.printf("[%s] ERROR: Unable To Parse Command, Double Check Your Code \n", name);
+			  break;
+		  }
 	  }
   }
   

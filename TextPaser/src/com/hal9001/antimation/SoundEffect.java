@@ -1,5 +1,7 @@
 package com.hal9001.antimation;
 
+import java.util.HashMap;
+
 /**
  * Class that handles what sounds to play,
  * it's  still incomplete. Need to find a way to add a timer and queue sounds.
@@ -13,9 +15,7 @@ public class SoundEffect {
 	private EZImage image;
 	private int clickX, clickY;
 	private boolean clicked = false;
-	
-	public SoundEffect(){
-	}
+	private static HashMap<String, EZSound> soundList = new HashMap<String, EZSound>();
 	
 	public SoundEffect(String file, EZImage pic){
 		objSound = EZ.addSound(file);
@@ -45,32 +45,34 @@ public class SoundEffect {
 	}
 	
 	/**
-	 * Set the currect sound to play
+	 * Set the currect sound to play. It will be looking at edmundgh_resources
+	 * for the song files.
 	 * @param name
 	 */
 	public static void setPlay(String name){
 		sound = EZ.addSound(name);
+		soundList.put(name, sound);
 	}
 	
 	/**
 	 * Play the currect sound
 	 */
-	public static void play(){
-		sound.play();
+	public static void play(String name){
+		soundList.get(name).play();
 	}
 	
 	/**
 	 * Loop the currect sound
 	 */
-	public static void loop(){
-		sound.loop();
+	public static void loop(String name){
+		soundList.get(name).loop();
 	}
 	
 	/**
 	 * Stop the sound
 	 */
-	public static void stop(){
-		sound.stop();
+	public static void stop(String name){
+		soundList.get(name).stop();
 	}
 
 }

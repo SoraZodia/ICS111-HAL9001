@@ -2,5 +2,5 @@ hide
 addtext 300 590 40 Space Oddity (Sped up)
 addtext 198 630 40 David Bowie
 addtext 161 670 40 Hal9001
-addsound SpaceOddity.wav
-playsound
+addsound edmundgh_resources/SpaceOddity.wav // Well this is kinda troublesome to write but I can call any of your sounds this way :D
+playsound edmundgh_resources/SpaceOddity.wav
