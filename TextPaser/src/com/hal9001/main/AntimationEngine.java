@@ -62,6 +62,11 @@ public class AntimationEngine {
 				new lorink_TestAnim("text2-pic.png", "text2.txt"),
 				new lorink_TestAnim("text3-pic.png", "text3.txt"),
 				new lorink_TestAnim("text4-pic.png", "text4.txt"),
+				new lorink_TestAnim("text5-pic.png", "text5.txt"),
+				new lorink_TestAnim("text6-pic.png", "text6.txt"),
+				new lorink_TestAnim("text7-pic.png", "text7.txt"),
+				new lorink_TestAnim("text8-pic.png", "text8.txt"),
+				
 			};	
 
 		while(running){
