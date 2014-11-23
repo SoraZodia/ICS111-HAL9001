@@ -16,6 +16,7 @@ public class keonimf_Actor implements IPaser{
 	private String control;
 	private double ang, ang2;
 	private double scale;
+	private boolean foreground;
 	String Script;
 	Scanner fileScanner;
 
@@ -35,9 +36,6 @@ public class keonimf_Actor implements IPaser{
 		interpolation = true;
 	}
 	
-	/*public void rotTo(){
-		actorPicture.rotateTo(ang2);
-	}*/
 	
 	public void setScale(double size) {
 		scale = size;
@@ -72,6 +70,13 @@ public class keonimf_Actor implements IPaser{
 					break;	
 					
 					}
+				
+				if(foreground){
+					actorPicture.pullToFront();
+				}else if(!foreground){
+					actorPicture.pushToBack();
+				}
+				
 				}
 			}	
 		

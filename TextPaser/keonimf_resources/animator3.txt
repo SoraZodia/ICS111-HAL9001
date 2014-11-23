@@ -1,5 +1,2 @@
-control 569 470 0 .5 3
-control 1800 470 0 .5 5
-control 920 350 0 .5 3
-control 920 350 270 .5 0
-control 620 350 0 .5 3
+control 649 700 0 .1 1
+control 649 0 0 .8 13
