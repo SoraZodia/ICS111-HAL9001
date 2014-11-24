@@ -4,33 +4,41 @@ addtext 198 630 40 David Bowie
 addtext 161 670 40 Hal9001
 addsound edmundgh_resources/SpaceOddity.wav // Well this is kinda troublesome to write but I can call any of your sounds this way :D
 playsound edmundgh_resources/SpaceOddity.wav
-move 0 0 23 
+delay 23 
 addtext 640 200 50 10
-move 0 0 1 
+delay 1 
 hidetext 10
-move 0 0 .5 
+delay .5 
 addtext 640 200 50 9
-move 0 0 .5 
+delay 1 
 hidetext 9
+delay .5 
 addtext 640 200 50 8
-move 0 0 .5 
+delay 1 
 hidetext 8
+delay .5 
 addtext 640 200 50 7
-move 0 0 .5 
+delay 1 
 hidetext 7
+delay .5 
 addtext 640 200 50 6
-move 0 0 .5 
+delay 1 
 hidetext 6
+delay .5 
 addtext 640 200 50 5
-move 0 0 .5
+delay 1
 hidetext 5
+delay .5 
 addtext 640 200 50 4
-move 0 0 .5 
+delay 1 
 hidetext 4
+delay .5 
 addtext 640 200 50 3
-move 0 0 .5 
-hidetext3
+delay 1 
+hidetext 3
+delay .5 
 addtext 640 200 50 2
-move 0 0 .5 
+delay 1 
 hidetext 2
+delay .5 
 addtext 640 200 50 1

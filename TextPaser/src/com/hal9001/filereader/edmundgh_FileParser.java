@@ -174,10 +174,10 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 		  case "addtext":
 			  x = reader.nextFloat();
 			  y = reader.nextFloat();
-			  int size = reader.nextInt();
+			  int textSize = reader.nextInt();
 			  text = reader.nextLine();
-			  TextDisplay.addText(text, (int)x, (int)y, size);
-			  System.out.printf("[%s] Adding text -%s-, sized %s, at X: %s and Y: %s \n", name, text, size, x, y);
+			  TextDisplay.addText(text, (int)x, (int)y, textSize);
+			  System.out.printf("[%s] Adding text -%s-, sized %s, at X: %s and Y: %s \n", name, text, textSize, x, y);
 			  break;
 
 		  case "hidetext":
@@ -191,7 +191,13 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  TextDisplay.showText(text);
 			  System.out.printf("[%s] Showing text -%s- \n", name, text);
 			  break;
-
+			  
+		  case "delay":
+			  time = reader.nextFloat();
+			  image.setInterpolAll(x, y, degree, size, time);
+			  System.out.printf("[%s] Next action will not start until %s seconds has passed \n", name, time);
+			  break;
+			  
 		  case "exit":
 			  AntimationEngine.stop();
 			  System.out.printf("[%s Log] Closing \n", name);
