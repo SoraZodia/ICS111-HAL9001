@@ -21,7 +21,7 @@ public class codywade_Actor implements IPaser{
 
 	public codywade_Actor(String filename, String script)throws java.io.IOException{
 		Script = script;
-		x=500;y=300; 
+		x=-1000;y=-1000; 
 		fileScanner = new Scanner(new FileReader("codywade_resources/"+Script));
 		actorPicture = EZ.addImage("codywade_resources/"+filename, x, y);
 		interpolation = false;

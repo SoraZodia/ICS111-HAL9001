@@ -30,19 +30,13 @@ public class AntimationEngine {
 		//ARRAY AND PLOYMORPHISM FOR THE WIN
 		IPaser actors[] = 
 			{
-<<<<<<< HEAD
-				/*//shaun's actors
-				new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-=======
 				//shaun's actors
-<<<<<<< HEAD
 				new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-=======
-				/*new shaunnk_Animator("REDSKY.txt", "RedSky.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
->>>>>>> origin/master
->>>>>>> origin/master
 				new shaunnk_Animator("ATMOSPHERE.txt", "EarthAtmosphere.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()/2),
 				new shaunnk_Animator("STARS1.txt", "Stars1.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
+				
+				new shaunnk_Animator("LAUNCHSITE.txt", "LaunchSite.JPG", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
+
 				
 				//cody's actors
 				new codywade_Actor("earth-pic.png","animator3.txt"),
@@ -52,7 +46,7 @@ public class AntimationEngine {
 				//keoni's actors
 				//new keonimf_Actor("hwpup.png","animator.txt", 950,256),
 				//new keonimf_Actor("bat.png","animator2.txt", 1800,500),
-				new keonimf_Actor("Moon.png","animator3.txt", 10,50),
+				new keonimf_Actor("Moon.png","animator3.txt", -1000, -1000),
 				
 				//lorin's actors
 				new lorink_TestAnim("asteroid1-pic.png", "control.txt"),
@@ -71,28 +65,16 @@ public class AntimationEngine {
 				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
 
 				new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60),
-<<<<<<< HEAD
-				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
-				
-				new lorink_TestAnim("slidechange-pic.png", "control.txt")
 
-=======
-<<<<<<< HEAD
-				new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60),
-				new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60), */
-				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
-=======
-				new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), */
-<<<<<<< HEAD
-=======
+				//new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
+ 
+			//	new edmundgh_FileParser("effects.txt", "LaunchSite.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2), 
 				
-				new lorink_TestAnim("slidechange-pic.png", "control.txt")
->>>>>>> origin/master
-<<<<<<< HEAD
-=======
->>>>>>> origin/master
->>>>>>> 3162009841ca78ecd9bb3e97bb6709b75631960d
->>>>>>> origin/master
+				//new lorink_TestAnim("slidechange-pic.png", "control.txt"),
+				
+				new shaunnk_Animator("SLIDECHANGE.txt", "slidechange-pic.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				//new shaunnk_Animator("BLACKHOLE.txt", "BlackHole.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight())
+
 			};	
 
 		while(running){

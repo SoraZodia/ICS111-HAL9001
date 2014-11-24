@@ -1,15 +1,1 @@
-control 300 300 0 1 0 false true
-control 300 300 360 1 1 true true
-control 200 200 -90 1.5 5 true true
-control 600 200 90 2 5 true true
-control 600 200 0 0.5 2 true true
-control 300 300 0 1 4 true true
-control 400 400 30 1 4 true true
-control 400 400 30 1 1 false true
-control 400 400 30 1 1 false true
-control 400 400 30 1 1 false true
-control 400 400 30 1 1 false true
-control 400 400 30 1 1 false true
-control 400 400 30 1 1 true true
-control 300 300 0 1 4 true true
-control 300 300 0 1 0 false true
+control -1000 -1000 0 0 1 true true

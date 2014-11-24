@@ -1,6 +1,7 @@
-hide
 addtext 300 590 40 Space Oddity (Sped up)
 addtext 198 630 40 David Bowie
 addtext 161 670 40 Hal9001
 addsound SpaceOddity.wav
 playsound
+addtext 640 650 40 hi
+
