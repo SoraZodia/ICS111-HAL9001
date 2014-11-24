@@ -1,0 +1,7 @@
+control 499 209 45 0.06 21 false true
+control 499 209 45 0.06 5 true true
+control 499 225 0 0.07 5 true true
+control 499 275 0 0.1 5 true true
+control 499 225 0 0.07 5 true true
+control 499 209 45 0.06 5 true true
+control 499 225 0 0.07 0 false false
