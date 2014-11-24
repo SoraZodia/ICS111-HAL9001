@@ -17,3 +17,10 @@ will be logged as " line of text // start time (how much time has elapsed before
 
 "Check ignition and may God's love be with youuuuuuuu" // 36 seconds
 
+"This is Ground Control to Major Tom" // 50 seconds
+
+"You've really made the grade!" // 54 seconds
+
+"And the papers want to know whose shirts you wear" // 58 seconds
+
+"Now it's time to leave the capsule if you dare" // 64 seconds

@@ -47,9 +47,6 @@ public class AntimationEngine {
 				new keonimf_Actor("Moon.png","animator3.txt", 10,50),
 				
 				//lorin's actors
-				new lorink_TestAnim("asteroid1-pic.png", "control.txt"),
-				new lorink_TestAnim("asteroid2-pic.png", "control2.txt"),
-				new lorink_TestAnim("saturn-pic.png", "control3.txt"),
 				*/
 				
 				new edmundgh_FileParser("effects.txt", "background.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
