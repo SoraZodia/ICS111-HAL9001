@@ -1,7 +1,50 @@
 addtext 300 590 40 Space Oddity (Sped up)
 addtext 198 630 40 David Bowie
 addtext 161 670 40 Hal9001
+<<<<<<< HEAD
 addsound SpaceOddity.wav
 playsound
 addtext 640 650 40 hi
 
+=======
+addsound edmundgh_resources/SpaceOddity.wav // Well this is kinda troublesome to write but I can call any of your sounds this way :D
+playsound edmundgh_resources/SpaceOddity.wav
+delay 23 
+addtext 640 200 50 10
+delay 1 
+hidetext 10
+delay .5 
+addtext 640 200 50 9
+delay 1 
+hidetext 9
+delay .5 
+addtext 640 200 50 8
+delay 1 
+hidetext 8
+delay .5 
+addtext 640 200 50 7
+delay 1 
+hidetext 7
+delay .5 
+addtext 640 200 50 6
+delay 1 
+hidetext 6
+delay .5 
+addtext 640 200 50 5
+delay 1
+hidetext 5
+delay .5 
+addtext 640 200 50 4
+delay 1 
+hidetext 4
+delay .5 
+addtext 640 200 50 3
+delay 1 
+hidetext 3
+delay .5 
+addtext 640 200 50 2
+delay 1 
+hidetext 2
+delay .5 
+addtext 640 200 50 1
+>>>>>>> origin/master

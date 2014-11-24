@@ -1,5 +1,6 @@
 package com.hal9001.antimation;
 
+import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -11,6 +12,7 @@ public class Image {
 	//Them variable
 	private EZImage image;
 	private static EZImage background;
+	private static HashMap<String, EZImage> backgroundList = new HashMap<String, EZImage>();
 	private float startX, startY;
 	private float destX, destY;
 	private long startTime;
@@ -49,39 +51,40 @@ public class Image {
 	 */
 	public static void addBackground(String fileName){
 		background = EZ.addImage(fileName, EZ.getWindowWidth()/2, EZ.getWindowHeight()/2);
-	    background.pushToBack();
+	    backgroundList.put(fileName, background);
+	    backgroundList.get(fileName).pushToBack();
 	}
 	
 	/**
 	 * For multiple background, this is used to set them so some/all/only one of them shows
 	 */
-	public static void layerUpBackground(short layer){
+	public static void layerUpBackground(String name, short layer){
 		for(short x = 0; x < layer; x++){
-		background.pullForwardOneLayer();
+			backgroundList.get(name).pullForwardOneLayer();
 		}
 	}
 	
 	/**
 	 * For multiple background, this is used to set them so some/all/only one of them shows
 	 */
-	public static void layerDownBackground(short layer){
+	public static void layerDownBackground(String name, short layer){
 		for(short x = 0; x < layer; x++){
-		background.pushBackOneLayer();
+			backgroundList.get(name).pushBackOneLayer();
 		}
 	}
 	
 	/**
 	 * Hides the background
 	 */
-	public static void hideBackground(){
-	    background.hide();
+	public static void hideBackground(String name){
+	    backgroundList.get(name).hide();
 	}
 	
 	/**
 	 * Show the background
 	 */
-	public static void showBackground(){
-	    background.show();
+	public static void showBackground(String name){
+		backgroundList.get(name).show();
 	}
 	
 	/**
@@ -90,8 +93,8 @@ public class Image {
 	 * determine how big you want the image 
 	 * @param scale
 	 */
-	public static void resizeBackground(double scale){
-	    background.scaleTo(scale);
+	public static void resizeBackground(String name, double scale){
+		backgroundList.get(name).scaleTo(scale);
 	}
 	
 	/**
@@ -165,7 +168,7 @@ public class Image {
 	private void interAll(float x, float y, float degree, float size){
 
 		if (interpolation == true) {
-
+			
 			float sizeTran = getInter(size, oldSize, newSize, duration);
 			float degreeTran = getInter(degree, oldDegree, newDegree, duration);
 			float xTran = getInter(x, startX, destX, duration);
@@ -187,19 +190,19 @@ public class Image {
 	/**
 	 * Determine the time limit as well as the location which the image needs to be
 	 * @author The Best Hula Dancer in Hawaii
-	 * @param intput
-	 * @param old 
-	 * @param notOld
+	 * @param input
+	 * @param oldValue 
+	 * @param newValue
 	 * @param duration
 	 * @return notOld
 	 */
-	private float getInter(float intput, float old, float notOld, float duration){
+	private float getInter(float input, float oldValue, float newValue, float duration){
 		float normTime = 0;
 		if(duration != 0){//Safely net
 		normTime = (float) (System.nanoTime() - startTime)/ duration;
 		}
-		notOld = (old + ((float) (intput - old) *  normTime));
-		return notOld;
+		newValue = (oldValue + ((float) (input + (-oldValue)) *  normTime));
+		return newValue;
 	}
 	
 	/**

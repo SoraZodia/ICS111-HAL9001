@@ -1,0 +1,6 @@
+control 500 200 45 1 5 false true
+control 500 200 45 1 10 true true
+control 500 200 45 1 38 false false
+control 700 200 45 1 5 true true
+control 700 200 45 0.5 2 true true
+control 700 200 45 1 0 false false

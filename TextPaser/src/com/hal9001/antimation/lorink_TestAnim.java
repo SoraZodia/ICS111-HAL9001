@@ -72,10 +72,10 @@ public class lorink_TestAnim implements IPaser{
 			}
 			
 			if(foreground){
-				Actor.pullToFront();
+				Actor.pullForwardOneLayer();
 			}
 			else if(!foreground){
-				Actor.pushToBack();
+				Actor.pushBackOneLayer();
 			}
 			
 			interpolation = true;
