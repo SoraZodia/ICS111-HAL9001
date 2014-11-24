@@ -35,12 +35,16 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 	  reader = new Scanner(new FileReader("edmundgh_resources/"+fileName));
 	  image = new Image("edmundgh_resources/"+imageName, "edmundgh_resources/"+soundName, x, y);
 	  name = fileName;
+	  this.x = x;
+	  this.y = y;
   }
   
   public edmundgh_FileParser(String fileName, String imageName, int x, int y) throws java.io.IOException{
 	  reader = new Scanner(new FileReader("edmundgh_resources/"+fileName));
 	  image = new Image("edmundgh_resources/"+imageName, x, y);
 	  name = fileName;
+	  this.x = x;
+	  this.y = y;
   }
 
   /**
@@ -126,12 +130,6 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  push = reader.nextShort();
 			  image.layerUpImage(push);
 			  System.out.printf("[%s] Pushing up %s layer \n", name, push);
-			  break;
-			  
-			  //Just a filler command to help with the different actor timing, 
-			  //It can be used as a delay... Maybe
-		  case "wait":
-			  System.out.printf("[%s] Calling command: %s \n", name, command);
 			  break;
 
 		  case "background":

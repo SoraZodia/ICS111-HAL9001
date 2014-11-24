@@ -168,7 +168,7 @@ public class Image {
 	private void interAll(float x, float y, float degree, float size){
 
 		if (interpolation == true) {
-
+			
 			float sizeTran = getInter(size, oldSize, newSize, duration);
 			float degreeTran = getInter(degree, oldDegree, newDegree, duration);
 			float xTran = getInter(x, startX, destX, duration);
@@ -190,19 +190,19 @@ public class Image {
 	/**
 	 * Determine the time limit as well as the location which the image needs to be
 	 * @author The Best Hula Dancer in Hawaii
-	 * @param intput
-	 * @param old 
-	 * @param notOld
+	 * @param input
+	 * @param oldValue 
+	 * @param newValue
 	 * @param duration
 	 * @return notOld
 	 */
-	private float getInter(float intput, float old, float notOld, float duration){
+	private float getInter(float input, float oldValue, float newValue, float duration){
 		float normTime = 0;
 		if(duration != 0){//Safely net
 		normTime = (float) (System.nanoTime() - startTime)/ duration;
 		}
-		notOld = (old + ((float) (intput - old) *  normTime));
-		return notOld;
+		newValue = (oldValue + ((float) (input + (-oldValue)) *  normTime));
+		return newValue;
 	}
 	
 	/**
