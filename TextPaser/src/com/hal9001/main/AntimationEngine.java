@@ -52,8 +52,11 @@ public class AntimationEngine {
 				new lorink_TestAnim("shuttledoor-pic.png", "lshuttledoor.txt"),
 				new lorink_TestAnim("shuttlenodoor-pic.png", "lnodoorshuttle.txt"),
 				new lorink_TestAnim("astronautnew-pic.png", "lmajortom.txt"),
-				//new lorink_TestAnim("airhose-pic.png", "lairhose.txt"),
 				new lorink_TestAnim("tinshipnew-pic.png", "ltinship.txt"),				
+				new lorink_TestAnim("text9-pic.png", "text9.txt"),
+				new lorink_TestAnim("text10-pic.png", "text10.txt"),
+				new lorink_TestAnim("text11-pic.png", "text11.txt"),
+				new lorink_TestAnim("text12-pic.png", "text12.txt"),
 				
 				new keonimf_Actor("ShuttleShip.png","animator.txt", 635,600),
 				new keonimf_Actor("backofspaceship-pic.png","animator2.txt", 649,550),

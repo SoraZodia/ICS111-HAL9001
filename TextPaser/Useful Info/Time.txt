@@ -24,3 +24,21 @@ will be logged as " line of text // start time (how much time has elapsed before
 "And the papers want to know whose shirts you wear" // 58 seconds
 
 "Now it's time to leave the capsule if you dare" // 64 seconds
+
+"This is Major Tom to Ground Control" // 71
+
+"I'm stepping through the door" // 75
+
+"And I'm floating in a most peculiar way" // 79
+
+"And the stars look very different today!" // 85
+
+"For here" //
+
+"Am I sitting in a tin can" //
+
+"Far above the world" //
+
+"Planet Earth is blue" //
+
+"And there's nothing I can do" //
