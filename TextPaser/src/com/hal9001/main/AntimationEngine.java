@@ -27,7 +27,7 @@ public class AntimationEngine {
 	public static void main(String args[]) throws java.io.IOException{
 		init();
 		
-		//ARRAY AND PLOYMORPHISM FOR THE WIN
+		//ARRAY AND PLOYMORPHISM FOR THE WIN :D
 		IPaser actors[] = 
 			{
 				
