@@ -1,5 +1,2 @@
-<<<<<<< HEAD
 layerdown 4
-=======
 hide
->>>>>>> origin/master
