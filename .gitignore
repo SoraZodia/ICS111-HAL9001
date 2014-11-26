@@ -10,6 +10,7 @@ $RECYCLE.BIN/
 
 #Ecilpse Stuff
 .metadata/*
+.recommenders/*
 bin/*
 TextPaser/bin/*
 
