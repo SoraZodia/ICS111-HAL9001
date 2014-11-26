@@ -1,3 +1,3 @@
-control 700 200 45 0.35 60 false false
+control 700 200 45 0.35 116 false false
 control 700 200 45 0.35 1 true true
 control 700 200 45 0.7 2 true true

@@ -25,20 +25,20 @@ will be logged as " line of text // start time (how much time has elapsed before
 
 "Now it's time to leave the capsule if you dare" // 64 seconds
 
-"This is Major Tom to Ground Control" // 71
+"This is Major Tom to Ground Control" // 71 seconds
 
-"I'm stepping through the door" // 75
+"I'm stepping through the door" // 75 seconds
 
-"And I'm floating in a most peculiar way" // 79
+"And I'm floating in a most peculiar way" // 79 seconds
 
-"And the stars look very different today!" // 85
+"And the stars look very different today!" // 85 seconds
 
-"For here" //
+"For here" // 91 seconds
 
-"Am I sitting in a tin can" //
+"Am I sitting in a tin can" // 93 seconds
 
-"Far above the world" //
+"Far above the world" // 97 seconds
 
-"Planet Earth is blue" //
+"Planet Earth is blue" // 103 seconds
 
-"And there's nothing I can do" //
+"And there's nothing I can do" // 105 seconds
