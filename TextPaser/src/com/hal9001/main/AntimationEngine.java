@@ -37,8 +37,13 @@ public class AntimationEngine {
 				new edmundgh_FileParser("shuttleLiTank2.txt", "ShuttleLiTank.png", (EZ.getWindowWidth()/2)-140, (EZ.getWindowHeight()/2)+100),
 			    new edmundgh_FileParser("shuttleShip.txt", "ShuttleShip.png", EZ.getWindowWidth()/2, (EZ.getWindowHeight()/2)+60),
 				
+				new shaunnk_Animator("STARS1.txt", "Stars1.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new shaunnk_Animator("STARS2.txt", "Stars1.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new shaunnk_Animator("ATMOSPHERE1.txt", "EarthAtmosphere.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new shaunnk_Animator("LAUNCHSITE.txt", "LaunchSite.JPG", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new shaunnk_Animator("ALIEN.txt", "Alien.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
 				new shaunnk_Animator("SLIDE_CHANGE.txt", "slidechange-pic.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-				//new shaunnk_Animator("BLACKHOLE.txt", "BlackHole.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
+
 			    
 				new lorink_TestAnim("text1-pic.png", "text1.txt"),
 				new lorink_TestAnim("text2-pic.png", "text2.txt"),

@@ -15,7 +15,8 @@ public class shaunnk_Animator implements IPaser{
 	private double x, y, startx, starty, destx, desty;
 	private double angle, startAngle, endAngle;
 	private double size, startSize, endSize;
-	private long starttime, duration;
+	private long starttime;
+	private double duration;
 	private boolean interpolation;
 
 	public shaunnk_Animator(String textfile, String image, int x, int y)
@@ -33,7 +34,7 @@ public class shaunnk_Animator implements IPaser{
 
 	}
 
-	public void move(double posx, double posy, long dur) {
+	public void move(double posx, double posy, double dur) {
 		interpolation = true;
 		startx = pic.getXCenter();
 		starty = pic.getYCenter();
@@ -44,7 +45,7 @@ public class shaunnk_Animator implements IPaser{
 
 	}
 
-	public void rotate(double angle, long dur) {
+	public void rotate(double angle, double dur) {
 		interpolation = true;
 		startAngle = pic.getRotation();
 		endAngle = angle;
@@ -53,7 +54,7 @@ public class shaunnk_Animator implements IPaser{
 
 	}
 
-	public void scale(double size, long dur) {
+	public void scale(double size, double dur) {
 		interpolation = true;
 		startSize = pic.getScale();
 		endSize = size;
@@ -102,12 +103,30 @@ public class shaunnk_Animator implements IPaser{
 				y = scan.nextDouble();
 				angle = scan.nextDouble();
 				size = scan.nextDouble();
-				duration = scan.nextInt();
+				duration = scan.nextDouble();
 				move(x, y, duration);
 				rotate(angle, duration);
 				scale(size, duration);
 
 				break;
+				
+			case "//":
+				 
+				scan.nextLine();
+				
+				break;
+				
+			case "HIDE":
+				  
+				  pic.hide();
+				  
+				  break;
+				  
+			case "SHOW":
+				 
+				  pic.show();
+				 
+				  break;
 
 			default:
 
