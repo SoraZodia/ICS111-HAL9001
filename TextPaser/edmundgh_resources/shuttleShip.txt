@@ -1,1 +1,2 @@
+hide
 resize .75 1
