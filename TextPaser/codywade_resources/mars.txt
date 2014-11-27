@@ -1,6 +1,6 @@
 control 1360 0 0 .5 1
 control 1360 0 0 1 86
-control 0 800 0 1 10
+control 0 800 0 1 13
 
 
 
