@@ -70,15 +70,9 @@ public class keonimf_Actor implements IPaser{
 					break;	
 					
 					}
-				
-				if(foreground){
-					actorPicture.pullToFront();
-				}else if(!foreground){
-					actorPicture.pushToBack();
-				}
-				
-				}
-			}	
+
+			}
+		}
 		
 		
 		if (interpolation == true) {
