@@ -48,8 +48,8 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 
   /**
    * Translate the command into Java code
-   * Note: The texts command will detect white spaces and count them as seprate 
-   * odjects for the HashMap. Ex: (For visibility, pretend _ is a white space)
+   * Note: The texts and sounds command will detect white spaces and count them as separate 
+   * Objects for the HashMap. Ex: (For visibility, pretend _ is a white space)
    * If you uses "addtext 10" and trys to hide it with "hidetext 10_", it will
    * cause a NullPointerException because 10_ is not found in the HashMap
    */
