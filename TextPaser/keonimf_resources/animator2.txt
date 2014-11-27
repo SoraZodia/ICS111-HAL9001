@@ -1,2 +1,2 @@
-control 649 550 0 .5 1 false
-control 649 0 0 .5 10 true
+control 649 550 0 .75 21 false
+control 649 550 0 .75 20 true

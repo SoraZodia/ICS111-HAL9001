@@ -73,7 +73,7 @@ public class AntimationEngine {
 			
 				new keonimf_Actor("explosion.png","animator3.txt", 649, 700),
 				new keonimf_Actor("backofspaceship-pic.png","animator2.txt", 649,550),
-				new keonimf_Actor("ShuttleShip.png","animator.txt", 635,600),
+				new keonimf_Actor("spaceshuttlenew-pic.png","animator.txt", 635,600),
 			};	
 
 		while(running){
