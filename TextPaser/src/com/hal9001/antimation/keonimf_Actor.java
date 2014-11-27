@@ -17,6 +17,7 @@ public class keonimf_Actor implements IPaser{
 	private double ang, ang2;
 	private double scale;
 	private boolean foreground;
+	private boolean showing;
 	String Script;
 	Scanner fileScanner;
 
@@ -64,9 +65,17 @@ public class keonimf_Actor implements IPaser{
 					ang = fileScanner.nextInt();
 					scale = fileScanner.nextDouble();
 					mdur = fileScanner.nextInt();
+					showing = fileScanner.nextBoolean();
 					setDestination(movex, movey, mdur);
 					rotBy(movex, movey, mdur);
 					setScale(scale);
+					
+					if(showing){
+						actorPicture.show();
+					}
+					else if(!showing){
+						actorPicture.hide();
+					}
 					break;	
 					
 					}
