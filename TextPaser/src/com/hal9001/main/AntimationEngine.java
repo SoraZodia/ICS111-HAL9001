@@ -46,6 +46,11 @@ public class AntimationEngine {
 				new shaunnk_Animator("ATMOSPHERE1.txt", "EarthAtmosphere.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new shaunnk_Animator("LAUNCHSITE.txt", "LaunchSite.JPG", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new shaunnk_Animator("ALIEN.txt", "Alien.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
+				
+				new keonimf_Actor("explosion.png","animator3.txt", 649, 700),
+				new keonimf_Actor("backofspaceship-pic.png","animator2.txt", 649,550),
+				new keonimf_Actor("spaceshuttlenew-pic.png","animator.txt", 635,600),
+				
 				new shaunnk_Animator("SLIDE_CHANGE.txt", "slidechange-pic.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 
 				new lorink_TestAnim("text1-pic.png", "text1.txt"),
@@ -70,10 +75,6 @@ public class AntimationEngine {
 				new lorink_TestAnim("shuttlenodoor-pic.png", "lnodoorshuttle.txt"),
 				new lorink_TestAnim("astronautnew-pic.png", "lmajortom.txt"),
 				new lorink_TestAnim("tinshipnew-pic.png", "ltinship.txt"),				
-			
-				new keonimf_Actor("explosion.png","animator3.txt", 649, 700),
-				new keonimf_Actor("backofspaceship-pic.png","animator2.txt", 649,550),
-				new keonimf_Actor("spaceshuttlenew-pic.png","animator.txt", 635,600),
 			};	
 
 		while(running){
