@@ -1,3 +1,1 @@
-hide
-control 580 600 0 .5 1
-control 580 0 0 .5 11
+resize .75 1

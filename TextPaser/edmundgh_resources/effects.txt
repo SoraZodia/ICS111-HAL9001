@@ -8,43 +8,43 @@ hidetext Space Oddity (Sped up)
 hidetext David Bowie
 hidetext Hal9001
 delay 17.6 
-addtext 640 200 50 10
+addtext 30 30 80 10
 delay 1.5 
 hidetext 10
 removetext 10
-addtext 640 200 50 9
+addtext 30 30 80 9
 delay 2 
 hidetext 9
 removetext 9
-addtext 640 200 50 8
+addtext 30 30 80 8
 delay 1.8 
 hidetext 8
 removetext 8
-addtext 640 200 50 7
+addtext 30 30 80 7
 delay 1.8
 hidetext 7
 removetext 7
-addtext 640 200 50 6
+addtext 30 30 80 6
 delay 1.8 
 hidetext 6
 removetext 6
-addtext 640 200 50 5
+addtext 30 30 80 5
 delay 2
 hidetext 5
 removetext 5
-addtext 640 200 50 4
+addtext 30 30 80 4
 delay 2 
 hidetext 4
 removetext 4
-addtext 640 200 50 3
+addtext 30 30 80 3
 delay 2 
 hidetext 3
 removetext 3
-addtext 640 200 50 2
+addtext 30 30 80 2
 delay 1.8 
 hidetext 2
 removetext 2
-addtext 640 200 50 1
+addtext 30 30 80 1
 delay 1
 hidetext 1
 removetext 1
