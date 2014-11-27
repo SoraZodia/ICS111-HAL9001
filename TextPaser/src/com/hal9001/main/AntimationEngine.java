@@ -42,6 +42,7 @@ public class AntimationEngine {
 				new codywade_Actor("mars-pic.png","mars.txt"),
 				new codywade_Actor("meteor.png","meteor.txt"),
 				new codywade_Actor("earth-pic.png","earth.txt"),
+
 				new shaunnk_Animator("ATMOSPHERE1.txt", "EarthAtmosphere.jpg", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new shaunnk_Animator("LAUNCHSITE.txt", "LaunchSite.JPG", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new shaunnk_Animator("ALIEN.txt", "Alien.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
