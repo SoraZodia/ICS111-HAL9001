@@ -1,3 +1,6 @@
-control 665 420 0 .75 21 false
-control 665 420 0 .75 20 true
-control 665 -1000 0 .75 17 true
+control 665 420 0 .75 1 false
+control 665 420 0 .75 20 false
+control 665 420 0 .75 19 true
+control 665 420 0 .75 4 true
+control 665 120 0 .75 3 true
+control 665 -680 0 .75 3 true

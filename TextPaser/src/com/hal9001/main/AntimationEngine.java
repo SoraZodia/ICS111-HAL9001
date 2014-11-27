@@ -39,6 +39,8 @@ public class AntimationEngine {
 				
 				new shaunnk_Animator("STARS1.txt", "Stars1.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new shaunnk_Animator("STARS2.txt", "Stars1.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+				new shaunnk_Animator("BLACKHOLE.txt", "BlackHole.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
+
 				new codywade_Actor("mars-pic.png","mars.txt"),
 				new codywade_Actor("meteor.png","meteor.txt"),
 				new codywade_Actor("earth-pic.png","earth.txt"),
@@ -74,7 +76,9 @@ public class AntimationEngine {
 				new lorink_TestAnim("shuttledoor-pic.png", "lshuttledoor.txt"),
 				new lorink_TestAnim("shuttlenodoor-pic.png", "lnodoorshuttle.txt"),
 				new lorink_TestAnim("astronautnew-pic.png", "lmajortom.txt"),
-				new lorink_TestAnim("tinshipnew-pic.png", "ltinship.txt"),				
+				new lorink_TestAnim("tinshipnew-pic.png", "ltinship.txt"),		
+				
+				
 			};	
 
 		while(running){
