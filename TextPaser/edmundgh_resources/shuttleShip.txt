@@ -1,2 +1,5 @@
 hide
 resize .75 1
+layerup 10
+delay 48
+show
