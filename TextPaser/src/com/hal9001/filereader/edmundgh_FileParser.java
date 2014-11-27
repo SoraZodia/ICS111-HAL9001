@@ -1,7 +1,6 @@
 package com.hal9001.filereader;
 
 import java.io.FileReader;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.hal9001.antimation.Image;
@@ -99,31 +98,7 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  image.show();
 			  System.out.printf("[%s] Calling command: %s image \n", name, command);
 			  break;
-
-		  case "addsound":
-			  soundName = reader.next();
-			  SoundEffect.setPlay(soundName);
-			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-			  break;
-
-		  case "loopsound":
-			  soundName = reader.next();
-			  SoundEffect.loop(soundName);
-			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-			  break;
-
-		  case "stopsound":
-			  soundName = reader.next();
-			  SoundEffect.stop(soundName);
-			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-			  break;
-
-		  case "playsound":
-			  soundName = reader.next();
-			  SoundEffect.play(soundName);
-			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
-			  break;
-
+			  
 		  case "layerdown":
 			  push = reader.nextShort();
 			  image.layerDownImage(push);
@@ -174,6 +149,30 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  Image.resizeBackground(backgroundName, scale);
 			  System.out.printf("[%s] Rescaling background %s to %s\n", name, backgroundName, scale);
 			  break;
+			  
+		  case "addsound":
+			  soundName = reader.next();
+			  SoundEffect.setPlay(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
+
+		  case "loopsound":
+			  soundName = reader.next();
+			  SoundEffect.loop(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
+
+		  case "stopsound":
+			  soundName = reader.next();
+			  SoundEffect.stop(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
+
+		  case "playsound":
+			  soundName = reader.next();
+			  SoundEffect.play(soundName);
+			  System.out.printf("[%s] Calling command: %s, %s \n", name, command, soundName);
+			  break;
 
 		  case "addtext":
 			  x = reader.nextFloat();
@@ -181,7 +180,7 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  int textSize = reader.nextInt();
 			  text = reader.nextLine();
 			  TextDisplay.addText(text, (int)x, (int)y, textSize);
-			  System.out.printf("[%s] Adding text -%s-, sized %s, at X: %s and Y: %s \n", name, text, textSize, x, y);
+			  System.out.printf("[%s] Adding and storing text -%s-, sized %s, at X: %s and Y: %s \n", name, text, textSize, x, y);
 			  break;
 
 		  case "hidetext":
@@ -196,6 +195,17 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  System.out.printf("[%s] Showing text -%s- \n", name, text);
 			  break;
 			  
+		  case "removetext":
+			  text = reader.nextLine();
+			  TextDisplay.removeText(text);
+			  System.out.printf("[%s] Removing text -%s- from storage \n", name, text);
+			  break;
+			  
+			// Cause the parser to skip the line // is found in
+		  case "//":
+			  reader.nextLine();
+			  break;
+			  
 		  case "delay":
 			  time = reader.nextFloat();
 			  image.setInterpolAll(x, y, degree, size, time);
@@ -207,11 +217,6 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  System.out.printf("[%s Log] Closing \n", name);
 			  //System.out.println("[System] Command called to exit program");
 			  //System.exit(0);
-			  break;
-
-			  // Cause the parser to skip the line // is found in
-		  case "//":
-			  reader.nextLine();
 			  break;
 
 		  default:

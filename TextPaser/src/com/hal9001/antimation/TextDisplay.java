@@ -39,5 +39,12 @@ public class TextDisplay {
 	public static void hideText(String str){
 		texts.get(str).hide();
 	}
+	
+	/**
+	 * Removes the text from the HashMap
+	 */
+	public static void removeText(String str){
+		texts.remove(str);
+	}
 
 }
