@@ -15,7 +15,7 @@ public class SoundEffect {
 	private EZImage image;
 	private int clickX, clickY;
 	private boolean clicked = false;
-	private static HashMap<String, EZSound> soundList = new HashMap<String, EZSound>();
+	private static HashMap<String, EZSound> soundList = new HashMap<>();
 	
 	public SoundEffect(String file, EZImage pic){
 		objSound = EZ.addSound(file);

@@ -12,7 +12,7 @@ public class TextDisplay {
 	
 	//String variable
 	private static EZText message;
-	private static HashMap<String, EZText> texts = new HashMap<String, EZText>();
+	private static HashMap<String, EZText> texts = new HashMap<>();
 	
 	/**
 	 * Get the text ready for later use

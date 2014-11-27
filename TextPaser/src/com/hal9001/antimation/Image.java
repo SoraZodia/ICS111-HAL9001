@@ -12,7 +12,7 @@ public class Image {
 	//Them variable
 	private EZImage image;
 	private static EZImage background;
-	private static HashMap<String, EZImage> backgroundList = new HashMap<String, EZImage>();
+	private static HashMap<String, EZImage> backgroundList = new HashMap<>();
 	private float startX, startY;
 	private float destX, destY;
 	private long startTime;
