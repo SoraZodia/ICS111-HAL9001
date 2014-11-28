@@ -5,5 +5,6 @@ rotate 45 1
 layerup 10
 delay 46
 show
-control 567 134 45 1 4
+control 578 124 45 1 4
 control 876 683 180 0 4
+hide

@@ -45,6 +45,6 @@ delay 1.8
 hidetext 2
 removetext 2
 addtext 30 30 80 1
-delay 1
+delay 2
 hidetext 1
 removetext 1

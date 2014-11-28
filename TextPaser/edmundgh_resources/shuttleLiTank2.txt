@@ -6,4 +6,5 @@ layerup 10
 delay 46
 show
 move 93 486 2
-control -100 400 -100 0 4
+control -100 400 -180 0 4
+hide
