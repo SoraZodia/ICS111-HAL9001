@@ -8,8 +8,10 @@ package com.hal9001.main;
  */
 public interface IPaser {
 
-	//These methods can do anything, it's up to you to tell it what to do
-	
+	/**
+	 * This will be called by AntimationEngine to tell the parsers to read their files
+	 * and activate the files' commands
+	 */
 	public void go();
 	
 }

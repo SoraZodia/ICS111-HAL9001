@@ -237,6 +237,7 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
   /**
    * Makes the images dance
    */
+  @Override
   public void go(){
 	  read();
 	  image.go();

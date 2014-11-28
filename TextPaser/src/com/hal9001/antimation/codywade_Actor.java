@@ -61,6 +61,7 @@ public class codywade_Actor implements IPaser{
 		return interpolation;
 	}
 
+	@Override
 	public void go(){	
 		command = "";
 		

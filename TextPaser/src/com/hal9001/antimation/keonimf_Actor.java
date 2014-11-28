@@ -51,7 +51,7 @@ public class keonimf_Actor implements IPaser{
 		interpolation = true;
 	}
 	
-	
+	@Override
 	public void go(){	
 		control = "";
 		

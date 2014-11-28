@@ -103,6 +103,7 @@ public class lorink_TestAnim implements IPaser{
 			return interpolation;
 		}
 		
+		@Override
 		public void go(){
 			command = "";
 			

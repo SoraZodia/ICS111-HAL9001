@@ -22,7 +22,6 @@ public class Image {
 	private float oldSize, newSize;
 	private SoundEffect sound;
 	private boolean hasSound = false;
-	private boolean clicked = true;
 	
 	//Totally not a Constructor 
 	public Image(String imageName, String soundName, int x, int y){
@@ -224,13 +223,13 @@ public class Image {
 		return (float)second;
 	}
 	
-	private int getPixelXLocation(){
+	private static int getPixelXLocation(){
 		int xClick = EZInteraction.getXMouseMove();
 		return xClick;
 		
 	}
 	
-	private int getPixelYLocation(){
+	private static int getPixelYLocation(){
 		int yClick = EZInteraction.getYMouseMove();
 		return yClick;
 		
@@ -242,8 +241,8 @@ public class Image {
 	public void go(){
 		 if(hasSound) sound.doClickSound();
 		 interAll(destX, destY, newDegree, newSize);
-		 if(EZInteraction.wasMouseLeftButtonPressed() && clicked){
-			 System.out.printf("Pixel Location\nX: %s \nY: %s \n", getPixelXLocation(), getPixelYLocation()); 
+		 if(EZInteraction.wasMouseLeftButtonPressed()){
+			 System.out.printf("Pixel Location\nX: %s \nY: %s \n", getPixelXLocation(), getPixelYLocation());
 		 }
 	}
 

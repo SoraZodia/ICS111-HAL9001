@@ -815,7 +815,7 @@ public class EZ extends JPanel {
     frame.setContentPane(newContentPane);
 
     // Size the frame according to largest element, then display the window.
-    frame.setResizable(true);
+    frame.setResizable(false);
     frame.pack();
     frame.setVisible(true);
     timeDelta = 0;
