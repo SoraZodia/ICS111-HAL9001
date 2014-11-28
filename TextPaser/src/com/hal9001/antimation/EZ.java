@@ -805,7 +805,7 @@ public class EZ extends JPanel {
    * @param height for the content area of the window.
    */
   public static void initialize(int width, int height) {
-    String windowName = "ICS111";
+    String windowName = "ICS111 - HAL 9001";
     JFrame frame = new JFrame(windowName);
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -815,7 +815,7 @@ public class EZ extends JPanel {
     frame.setContentPane(newContentPane);
 
     // Size the frame according to largest element, then display the window.
-    frame.setResizable(false);
+    frame.setResizable(true);
     frame.pack();
     frame.setVisible(true);
     timeDelta = 0;

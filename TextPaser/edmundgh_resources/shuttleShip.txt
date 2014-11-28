@@ -1,5 +1,6 @@
 hide
 resize .75 1
+rotate 45 1
 layerup 10
 delay 48
-// show
+show
