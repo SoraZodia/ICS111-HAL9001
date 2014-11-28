@@ -1,4 +1,5 @@
 hide
+move 52 788 1
 resize .75 1
 rotate 45 1
 layerup 10

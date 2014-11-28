@@ -1,7 +1,7 @@
 hide
-move 529 369 1
+move 146 841 1
 resize .75 1
 rotate 45 1
 layerup 10
-delay 45
+delay 48
 show
