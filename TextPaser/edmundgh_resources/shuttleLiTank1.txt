@@ -3,5 +3,7 @@ move 146 841 1
 resize .75 1
 rotate 45 1
 layerup 10
-delay 48
+delay 46
 show
+move 322 625 2
+control 500 740 100 0 4
