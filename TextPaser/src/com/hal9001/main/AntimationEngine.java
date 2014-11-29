@@ -49,12 +49,15 @@ public class AntimationEngine {
 				new shaunnk_Animator("LAUNCHSITE.txt", "LaunchSite.JPG", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new shaunnk_Animator("ALIEN.txt", "Alien.png", EZ.getWindowWidth()/2, -EZ.getWindowHeight()),
 				
+				new lorink_TestAnim("smoke1-pic.png", "smoke1.txt"),
+				new lorink_TestAnim("smoke2-pic.png", "smoke2.txt"),
+				
 				new keonimf_Actor("explosion.png","animator3.txt", 649, 700),
 				new keonimf_Actor("backofspaceship-pic.png","animator2.txt", 649,550),
 				new keonimf_Actor("spaceshuttlenew-pic.png","animator.txt", 635,600),
 				
 				new shaunnk_Animator("SLIDE_CHANGE.txt", "slidechange-pic.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
-
+				
 				new lorink_TestAnim("text1-pic.png", "text1.txt"),
 				new lorink_TestAnim("text2-pic.png", "text2.txt"),
 				new lorink_TestAnim("text3-pic.png", "text3.txt"),
@@ -72,11 +75,16 @@ public class AntimationEngine {
 				new lorink_TestAnim("text15-pic.png", "text15.txt"),
 				new lorink_TestAnim("text16-pic.png", "text16.txt"),
 				new lorink_TestAnim("text17-pic.png", "text17.txt"),
+				new lorink_TestAnim("redled-pic.png", "redled1.txt"),
+				new lorink_TestAnim("redled-pic.png", "redled2.txt"),
+				new lorink_TestAnim("redled-pic.png", "redled3.txt"),
 				new lorink_TestAnim("spaceshuttlenew-pic.png", "lshuttle.txt"),
 				new lorink_TestAnim("shuttledoor-pic.png", "lshuttledoor.txt"),
 				new lorink_TestAnim("shuttlenodoor-pic.png", "lnodoorshuttle.txt"),
 				new lorink_TestAnim("astronautnew-pic.png", "lmajortom.txt"),
-				new lorink_TestAnim("tinshipnew-pic.png", "ltinship.txt"),		
+				new lorink_TestAnim("tinshipnew-pic.png", "ltinship.txt"),	
+				new lorink_TestAnim("tinshipnodoor-pic.png", "ltinshipnodoor.txt"),
+				new lorink_TestAnim("tinshipdoor-pic.png", "ltinshipdoor.txt"),
 				
 				
 			};	

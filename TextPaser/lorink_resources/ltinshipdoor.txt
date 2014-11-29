@@ -1,0 +1,7 @@
+control 525 234 45 0.35 92 false true
+control 525 234 45 0.35 1 true false
+control 550 263 45 0.7 2 true false
+control 550 263 45 0.7 5 true false
+control 499 212 45 0.7 4 true false
+control 498 212 45 0.7 1 true false
+control 498 212 45 0.7 0 false false

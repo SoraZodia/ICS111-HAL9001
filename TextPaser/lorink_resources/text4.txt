@@ -1,3 +1,3 @@
-control 1000 600 0 1 36 false true
-control 1000 600 0 1 6 true true
-control 1000 600 0 1 0 false true
+control 1150 625 0 1 36 false true
+control 1150 625 0 1 6 true true
+control 1150 625 0 1 0 false true
