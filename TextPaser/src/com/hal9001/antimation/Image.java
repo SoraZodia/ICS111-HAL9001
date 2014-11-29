@@ -49,10 +49,10 @@ public class Image {
 	 * Sets the background
 	 * @param fileName
 	 */
-	public static void addBackground(String fileName){
+	public static void addBackground(String fileName, boolean hide){
 		background = EZ.addImage(fileName, EZ.getWindowWidth()/2, EZ.getWindowHeight()/2);
 	    backgroundList.put(fileName, background);
-	    backgroundList.get(fileName).pushToBack();
+	    if(hide) backgroundList.get(fileName).hide();
 	}
 	
 	/**

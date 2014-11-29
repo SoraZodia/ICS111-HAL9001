@@ -1,0 +1,14 @@
+hide
+layerup 8
+background edmundgh_resources/towerLaunch.png true
+// hidebackground edmundgh_resources/towerLaunch.png
+layerupbackground edmundgh_resources/towerLaunch.png 9
+delay 21
+show
+delay 1
+showbackground edmundgh_resources/towerLaunch.png
+delay 7
+control 900 364 90 1 3
+delay 7.8
+hide
+hidebackground edmundgh_resources/towerLaunch.png

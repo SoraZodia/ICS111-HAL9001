@@ -2,9 +2,9 @@ hide
 move 146 841 1
 resize .75 1
 rotate 45 1
-layerup 10
+layerup 9
 delay 46
 show
-move 322 625 2
+move 307 658 1
 control 500 740 180 0 4
 hide

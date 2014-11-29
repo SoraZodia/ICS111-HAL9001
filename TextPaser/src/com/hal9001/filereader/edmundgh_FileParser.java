@@ -112,8 +112,11 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  break;
 
 		  case "background":
+			  boolean hide;
 			  backgroundName = reader.next();
-			  Image.addBackground(backgroundName);
+			  if(reader.hasNextBoolean()) hide = reader.nextBoolean();
+			  else hide = false;
+			  Image.addBackground(backgroundName, hide);
 			  System.out.printf("[%s] Adding background: %s \n", name, backgroundName);
 			  break;
 
