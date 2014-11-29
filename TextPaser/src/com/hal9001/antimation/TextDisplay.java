@@ -19,9 +19,25 @@ public class TextDisplay {
 	 * @param String
 	 * @param X coord
 	 * @param Y coord
+	 * @param Font Size
 	 */
 	public static void addText(String str, int x, int y, int size){
 		message = EZ.addText(x, y, str, Color.WHITE, size);
+		texts.put(str, message);
+	}
+	
+	/**
+	 * Like {@link TextDisplay#addText(String, int, int, int)} but allows for custom colors
+     * @param String
+	 * @param X coord
+	 * @param Y coord
+	 * @param Font Size
+	 * @param Red Scale
+	 * @param Blue Scale
+	 * @param Green Scale
+	 */
+	public static void addText(String str, int x, int y, int size, int rValue, int bValue, int gValue){
+		message = EZ.addText(x, y, str, new Color(rValue, bValue, gValue), size);
 		texts.put(str, message);
 	}
 	

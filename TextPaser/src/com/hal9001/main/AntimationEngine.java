@@ -30,7 +30,6 @@ public class AntimationEngine {
 		//ARRAY AND PLOYMORPHISM FOR THE WIN :D
 		IPaser actors[] = 
 			{
-				
 				new edmundgh_FileParser("effects.txt", "background.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new edmundgh_FileParser("shuttleExtank.txt", "ShuttleExtank.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				new edmundgh_FileParser("shuttleLiTank1.txt", "ShuttleLiTank.png", (EZ.getWindowWidth()/2)+140, (EZ.getWindowHeight()/2)+100),
@@ -86,8 +85,6 @@ public class AntimationEngine {
 				new lorink_TestAnim("tinshipnew-pic.png", "ltinship.txt"),	
 				new lorink_TestAnim("tinshipnodoor-pic.png", "ltinshipnodoor.txt"),
 				new lorink_TestAnim("tinshipdoor-pic.png", "ltinshipdoor.txt"),
-				
-				
 			};	
 
 		while(running){

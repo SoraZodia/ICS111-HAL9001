@@ -185,6 +185,18 @@ public class edmundgh_FileParser implements IPaser{ //Yes Eclipse, I know the co
 			  TextDisplay.addText(text, (int)x, (int)y, textSize);
 			  System.out.printf("[%s] Adding and storing text -%s-, sized %s, at X: %s and Y: %s \n", name, text, textSize, x, y);
 			  break;
+			  
+		  case "addcoloredtext":
+			  x = reader.nextFloat();
+			  y = reader.nextFloat();
+			  int rValue = reader.nextInt();
+			  int bValue = reader.nextInt();
+			  int gValue = reader.nextInt();
+			  textSize = reader.nextInt();
+			  text = reader.nextLine();
+			  TextDisplay.addText(text, (int)x, (int)y, textSize, rValue, bValue, gValue);
+			  System.out.printf("[%s] Adding and storing text -%s-, sized %s, at X: %s and Y: %s \n", name, text, textSize, x, y);
+			  break;
 
 		  case "hidetext":
 			  text = reader.nextLine();
