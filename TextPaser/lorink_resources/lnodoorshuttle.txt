@@ -4,5 +4,3 @@ control 500 200 45 1 4 true false
 control 500 200 45 1 15 true false
 control 500 200 45 0.5 2 true false
 control 500 200 45 0.5 100 false false
-control 500 200 45 1 4 true false
-control 500 200 45 1 0 false false
