@@ -1,4 +1,4 @@
 control 500 200 45 0.7 104 false false
 control 500 200 45 0.7 3 true true
 control 700 200 45 0.7 22 true true
-control 600 550 2000 0 3 true true
+control 580 550 2000 0 3 true true
