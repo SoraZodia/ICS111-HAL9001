@@ -58,6 +58,10 @@ public class AntimationEngine {
 				
 				new shaunnk_Animator("SLIDE_CHANGE.txt", "slidechange-pic.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				
+				new lorink_TestAnim("asteroid1-pic.png", "asteroid1.txt"),
+				new lorink_TestAnim("asteroid2-pic.png", "asteroid2.txt"),
+				new lorink_TestAnim("asteroid1-pic.png", "asteroid4.txt"),
+				new lorink_TestAnim("asteroid2-pic.png", "asteroid3.txt"),
 				new lorink_TestAnim("text1-pic.png", "text1.txt"),
 				new lorink_TestAnim("text2-pic.png", "text2.txt"),
 				new lorink_TestAnim("text3-pic.png", "text3.txt"),
@@ -79,6 +83,8 @@ public class AntimationEngine {
 				new lorink_TestAnim("text19-pic.png", "text19.txt"),
 				new lorink_TestAnim("text20-pic.png", "text20.txt"),
 				new lorink_TestAnim("text21-pic.png", "text21.txt"),
+				new lorink_TestAnim("text22-pic.png", "text22.txt"),
+				new lorink_TestAnim("text23-pic.png", "text23.txt"),
 				new lorink_TestAnim("redled-pic.png", "redled1.txt"),
 				new lorink_TestAnim("redled-pic.png", "redled2.txt"),
 				new lorink_TestAnim("redled-pic.png", "redled3.txt"),
