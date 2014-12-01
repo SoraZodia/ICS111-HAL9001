@@ -3,4 +3,4 @@ control 495 210 45 1 1 true true
 control 542 257 45 1 4 true true
 control 542 257 45 1 15 true false
 control 521 228 45 0.5 2 true false
-control 542 257 45 0.5 100 false false
+control 542 257 45 0.5 0 false false

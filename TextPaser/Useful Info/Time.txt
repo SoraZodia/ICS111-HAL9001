@@ -42,3 +42,11 @@ will be logged as " line of text // start time (how much time has elapsed before
 "Planet Earth is blue" // 103 seconds
 
 "And there's nothing I can do" // 105 seconds
+
+"Though I'm past one hundred thousand miles" // 116 seconds
+
+"I'm feeling very still" // 120 seconds
+
+"And I think my spaceship knows just where to go" // 124 seconds
+
+"Tell my wife I love her very much she knows!" // 129 seconds
