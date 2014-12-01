@@ -73,5 +73,5 @@ addcoloredtext 1123 95 84 140 168 30 ----------------------------
 addcoloredtext 1158 122 89 167 230 40 Cody Wade
 addcoloredtext 1159 155 89 167 230 40 Edmund Ho
 addcoloredtext 1128 189 89 167 230 40 Keoni Fontanilla
-addcoloredtext 1115 225 89 167 230 40 Lorin Kawanmura
+addcoloredtext 1115 225 89 167 230 40 Lorin Kawamura
 addcoloredtext 1115 261 89 167 230 40 Shaun Kushisaki
