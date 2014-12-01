@@ -48,7 +48,22 @@ addtext 30 30 80 1
 delay 2
 hidetext 1
 removetext 1
-delay 130
+delay 103
+addcoloredtext 637 332 240 0 0 60 Can you hear me Major Tom?
+delay 1 
+hidetext Can you hear me Major Tom?
+removetext Can you hear me Major Tom?
+delay 1
+addcoloredtext 637 332 153 0 0 70 Can you hear me Major Tom?!
+delay 2 
+hidetext Can you hear me Major Tom?!
+removetext Can you hear me Major Tom?!
+delay 1
+addcoloredtext 637 332 120 0 0 80 CAN YOU HEAR ME MAJOR TOM!
+delay 2 
+hidetext CAN YOU HEAR ME MAJOR TOM!
+removetext CAN YOU HEAR ME MAJOR TOM!
+delay 20
 showtext Space Oddity (Sped up)
 showtext David Bowie
 showtext Hal9001
