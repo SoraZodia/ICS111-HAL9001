@@ -1,6 +1,6 @@
-addcoloredtext 300 590 89 167 230 40 Space Oddity (Sped up)
-addcoloredtext 198 630 126 209 221 40 David Bowie
-addcoloredtext 161 670 126 209 221 40 Hal9001
+addcoloredtext 250 37 89 167 230 40 Space Oddity (Sped up)
+addcoloredtext 148 80 126 209 221 40 David Bowie
+addcoloredtext 113 120 126 209 221 40 Hal9001
 addsound edmundgh_resources/SpaceOddity.wav // Well this is kinda troublesome to write but I can call any of your sounds this way :D
 playsound edmundgh_resources/SpaceOddity.wav
 delay 5
@@ -68,10 +68,10 @@ showtext Space Oddity (Sped up)
 showtext David Bowie
 showtext Hal9001
 delay 2
-addcoloredtext 1150 72 84 140 168 40 Members
-addcoloredtext 1123 95 84 140 168 30 ----------------------------
-addcoloredtext 1158 122 89 167 230 40 Cody Wade
-addcoloredtext 1159 155 89 167 230 40 Edmund Ho
-addcoloredtext 1128 189 89 167 230 40 Keoni Fontanilla
-addcoloredtext 1115 225 89 167 230 40 Lorin Kawamura
-addcoloredtext 1115 261 89 167 230 40 Shaun Kushisaki
+addcoloredtext 1150 456 84 140 168 40 Members
+addcoloredtext 1123 479 84 140 168 30 ----------------------------
+addcoloredtext 1158 514 89 167 230 40 Cody Wade
+addcoloredtext 1159 556 89 167 230 40 Edmund Ho
+addcoloredtext 1128 596 89 167 230 40 Keoni Fontanilla
+addcoloredtext 1120 635 89 167 230 40 Lorin Kawamura
+addcoloredtext 1120 676 89 167 230 40 Shaun Kushisaki
