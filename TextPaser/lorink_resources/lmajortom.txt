@@ -8,4 +8,6 @@ control 499 209 45 0.06 5 true true
 control 499 225 0 0.07 0 false false
 control 1350 800 0 0 1 false false
 control 1350 800 0 .2 48 false false
-control -300 200 1000 .2 19 true true
+control 655 400 1000 .2 19 true true
+control 655 400 1000 0.02 15 true true
+control 655 400 1000 0.02 1 false false

@@ -55,6 +55,8 @@ public class AntimationEngine {
 				new keonimf_Actor("explosion.png","animator3.txt", 649, 700),
 				new keonimf_Actor("backofspaceship-pic.png","animator2.txt", 649,550),
 				new keonimf_Actor("spaceshuttlenew-pic.png","animator.txt", 635,600),
+				new keonimf_Actor("aliencraft2.png","animator4.txt", 0,0),
+				new keonimf_Actor("alienray.png", "alienray.txt", 647, 365),
 				
 				new shaunnk_Animator("SLIDE_CHANGE.txt", "slidechange-pic.png", EZ.getWindowWidth()/2, EZ.getWindowHeight()/2),
 				
